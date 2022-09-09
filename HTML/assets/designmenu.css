@@ -19,7 +19,7 @@ nav{
     bottom: 0;
     height: 100%;
     left: 0;
-    background: rgb(111, 92, 156);
+    background: rgb(240, 108, 47);
     width:6%;
     overflow:hidden;
     transition: width 0.2s linear;
@@ -47,6 +47,7 @@ nav{
     font-size: 18px;
     text-transform: uppercase;
     top: 6px;
+    color: rgb(19, 102, 39);
     
 }
 
@@ -65,12 +66,13 @@ a{
     top:14px;
     font-size: 20px;
     text-align: center;
+    color: rgb(48, 211, 89);
 }
 .nav-item{
     position: relative;
     top:12px;
     margin-left: 10px;
-    color: rgb(148, 224, 60);
+    color: rgb(48, 211, 89);
 }
 a:hover{
     background-color: burlywood;

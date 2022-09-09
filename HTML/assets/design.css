@@ -54,7 +54,7 @@ button:hover{
 } 
 
     button:hover{
-        background-color:#3BAF9F ;    
+        background-color:#057566 ;    
     }
 
 
@@ -65,7 +65,7 @@ nav{
     bottom: 0;
     height: 800px;
     left: 0;
-    background: rgb(111, 92, 156);
+    background: #20dbc2;
     width:6%;
     overflow:hidden;
     transition: width 0.2s linear;
@@ -98,7 +98,7 @@ nav{
 
 a{
     position: relative;
-    color:rgb(83,85,83);
+    color:#184238;
     font-size: 14px;
     display: table;
     width: 300px;
@@ -116,7 +116,7 @@ a{
     position: relative;
     top:12px;
     margin-left: 10px;
-    color: rgb(148, 224, 60);
+    color: #184238;
 }
 a:hover{
     background-color: burlywood;
