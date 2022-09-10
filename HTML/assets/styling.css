@@ -185,7 +185,21 @@ form.sign-in-form{
     margin-bottom: 2px;
 }
 
-.imi{
-    color: white;
-    background: none;
+.btn{
+    width: 150px;
+    height: 49px;
+    outline: none;
+    border: none;
+    border-radius: 48px;
+    background-color: #fff;
+    color:#20dbc2 ;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 10px 0;
+    transition: all 0.5s;
 }
+
+.btn:hover{
+    background-color: #fff;    
+}
+
