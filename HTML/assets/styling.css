@@ -185,7 +185,7 @@ form.sign-in-form{
     margin-bottom: 2px;
 }
 
-.btn{
+.btn1{
     width: 150px;
     height: 49px;
     outline: none;
@@ -199,7 +199,16 @@ form.sign-in-form{
     transition: all 0.5s;
 }
 
-.btn:hover{
+.btn1:hover{
     background-color: #fff;    
+}
+btn1.transparent{
+    margin:0;
+    background: none;
+    border:2px solid rgb(85, 82, 82);
+    width:130px;
+    height: 41px;
+    font-weight: 600;
+    font-size: 0.8rem;
 }
 
