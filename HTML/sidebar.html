@@ -1,54 +1,19 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
-    <link rel="stylesheet" href="assets/design.css">
-    <!-- Add icon library -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-
-
+    <title>Planzo-Meeting Room Application</title>
+    <link rel="stylesheet" href="assets/designing.css">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
-
-    <div class="container">
-        <h2>Booking Room</h2>
-        <form>
-            <div class="input-field">
-                <i class="fa fa-user"></i>
-                <input type="text" placeholder="Name">
-
-            </div>
-            <div class="input-field">
-                <i class="fa fa-envelope email"></i>
-                <input type="email" placeholder="Email" required>
-            </div>
-            <div class="input-field">
-                <i class="fa fa-phone"></i>
-                <input type="tel" placeholder="phone">
-            </div>
-            <div class="input-field">
-                <i class="fa fa-clock-o"></i>
-                <input type="time" placeholder="Time">
-            </div>
-            <div class="input-field">
-                <i class="fa fa-calendar"></i>
-                <input type="date" placeholder="date">
-            </div>
-            <button>Choose Room</button>
-
-        </form>
-        </ <div class="sidebar">
+    <div class="sidebar">
         <div class="logo_content">
-            <!-- <div class="logo">
-                        <img src="images/logo3.png" width="23%">
-                    <p class="logo_name">Planzo</p>
-                    <i class='bx bx-menu' id="btn"></i> -->
+            
         </div>
         <ul class="nav_list">
             <div class="logo">
@@ -89,13 +54,25 @@
         </ul>
         <div class="profile_content">
             <div class="profile">
-                <div class="profile_details"></div>
+                <div class="profile_details">
+                    <img>
+                    <div class="name_job">
+                        <div class="name">Tanushree</div>
+                        <div class="job">Web designer</div>
+                    </div>
+                </div>
+                <i class='bx bx-log-out tooltip' id="logout"></i>
+                <span class="tooltop">Log out</span>
             </div>
-
         </div>
-        <i class='bx bx-log-out tooltip' id="logout"></i>
-        <span class="tooltop">Log out</span>
+
+
+
     </div>
+    <div class="home_content">
+        <div class="text">Meeting Room Booking</div>
+    </div>
+
 
     <script>
         let btn = document.querySelector("#btn");
@@ -106,8 +83,6 @@
         }
 
     </script>
-
-
 </body>
 
 </html>

@@ -272,7 +272,7 @@ section{
     background: #fff;
     padding: 5px;
     border-radius: 5px;
-    color: #ff7d7d;
+    /* color: #ff7d7d; */
     right: 10px;
     top: 10px;
     text-transform: capitalize;
@@ -300,7 +300,7 @@ section{
   }
   
   .card-btn:hover {
-    background: #ff7d7d;
+    /* background: #ff7d7d; */
     color: #fff;
   }
   
@@ -428,6 +428,7 @@ section{
     background-image: linear-gradient(45deg,#bca89f,#d8cbc4);
 
   }
+
   @import url('https://fonts.googleapis.com/css2? family=poppins:wght@300;400;600;700&display=swap');
 *
 {
@@ -460,7 +461,7 @@ input{
     width: 2000px;
     top: -10%;
     right: 48%;
-    background-image: linear-gradient(45deg,#e5d3b3,#967f74);
+    background-image: linear-gradient(45deg,#bca89f,#d8cbc4);
     transform: translateY(-50%);
     border-radius: 50%;
     z-index:6;
@@ -477,7 +478,7 @@ form{
 }
 .title{
     font-size: 5rem;
-    color: #967f74;
+    /* color: #967f74; */
     margin-bottom: 10px;
 }
 .input-field{
@@ -518,7 +519,7 @@ form{
     outline: none;
     border: none;
     border-radius: 48px;
-    background-image: linear-gradient(45deg,#9c6644, #8b6c5c);
+    /* background-image: linear-gradient(45deg,#9c6644, #8b6c5c); */
     color: white;
     text-transform: uppercase;
     font-weight: 600;

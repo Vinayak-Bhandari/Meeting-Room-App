@@ -5,7 +5,7 @@
     padding:0;
     box-sizing:border-box;
 }
-body,
+
 input{
     font-family:'poppins',  sans-serif;
 }
@@ -30,7 +30,7 @@ input{
     width: 2000px;
     top: -10%;
     right: 48%;
-    background-image: linear-gradient(-45deg,#20dbc2 0%,#00bfa6 100%);
+    background-image: linear-gradient(45deg,#e5d3b3,#967f74);
     transform: translateY(-50%);
     border-radius: 50%;
     z-index:6;
@@ -87,7 +87,7 @@ form{
     outline: none;
     border: none;
     border-radius: 48px;
-    background-color: #20dbc2;
+    background-color: chocolate;
     color: white;
     text-transform: uppercase;
     font-weight: 600;
@@ -148,7 +148,7 @@ form.sign-in-form{
     height:100%;
     top: 2px;
     left:0;
-    display: grid;
+    display: flex;
     grid-template-columns: repeat(2,1fr);
 }
 .panel{
@@ -212,3 +212,10 @@ btn1.transparent{
     font-size: 0.8rem;
 }
 
+body{
+    overflow: hidden;
+}
+.link_btn{
+    text-decoration: none;
+    color: white;
+}
