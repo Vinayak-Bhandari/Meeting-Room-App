@@ -51,6 +51,7 @@ margin-bottom: 26px;
 .form button {
   font-family: "Roboto", sans-serif;
   text-transform: uppercase;
+  text-decoration: none;
   outline: 0;
   border-radius: 20px;
   background-image: linear-gradient(45deg,#9c6644, #8b6c5c);
@@ -82,7 +83,7 @@ margin-bottom: 26px;
 
 body {
   /* background-color: #328f8a; */
- background-image: linear-gradient(45deg,#e5d3b3,#967f74);
+ background-image: linear-gradient(45deg,#bca89f,#d8cbc4);
  font-family:'poppins',  sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -98,4 +99,30 @@ body {
   margin-left: 5px;
   color: #664229;
   right: 0;
+}
+button{
+  text-decoration: none;
+}
+
+  .btn{
+    width: 150px;
+    height: 49px;
+    outline: none;
+    border: none;
+    border-radius: 48px;
+    background-image: linear-gradient(45deg,#9c6644, #8b6c5c);
+    color: white;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 10px 0;
+    transition: all 0.5s;
+    text-align: center;
+}
+.btn:hover{
+    background-color:#acacac;    
+
+}
+.link_btn{
+  text-decoration: none;
+  color: white;
 }
