@@ -4,7 +4,9 @@
     padding: 0;
     font-family:sans-serif;
     box-sizing:border-box;
-   }
+}
+   body{background-color:#bca89f,#d8cbc4;}
+   
    h1{
     text-align:center;
     color:green;
