@@ -137,7 +137,9 @@
             <input type="password" placeholder="PASSWORD" class="box">
             <i class="fas fa-lock"></i>
             </div>
-            <input type="SUBMIT" placeholder="SUBMIT" class="btn">
+            <!-- <input type="SUBMIT" placeholder="SUBMIT" class="btn"> -->
+            <button class="btn solid" value="SignUp"><a class="link_btn" href="login.html">Submit</a></button>
+
             </form>
     </section>
    
@@ -145,6 +147,12 @@
 
     
 <script>
+    document.querySelectorAll('.image-slider img'). forEach(image =>{
+        images.onclick= () =>{
+            var src =images.getAttribute('src');
+            document.querySelector('.main-home-image').src=src;
+        };
+    })
    const productContainers = [...document.querySelectorAll('.product-container')];
 const nxtBtn = [...document.querySelectorAll('.nxt-btn')];
 const preBtn = [...document.querySelectorAll('.pre-btn')];
