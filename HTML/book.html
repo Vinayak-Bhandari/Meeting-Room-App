@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planzo-Meeting Room Booking</title>
+    <link rel="stylesheet" href="assets/orderdesign.css">
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="logo_content">
+            <!-- <div class="logo">
+     <img src="images/logo3.png" width="23%">
+ <p class="logo_name">Planzo</p>
+ <i class='bx bx-menu' id="btn"></i> -->
+        </div>
+        <ul class="nav_list">
+            <div class="logo">
+                <img src="images/logo3.png" width="50px">
+                <!-- <p class="logo_name">Planzo</p> -->
+                <i class='bx bx-menu' id="btn"></i>
+            </div>
+
+            <li>
+                <a href="#">
+                    <i class='bx bxs-book-bookmark'></i>
+                    <span class="links_name">Status </span>
+                </a>
+                <span class="tooltip" style="font-weight: 12pt;">Meeting Room Status</span>
+            </li>
+            <li>
+                <a href="book.html">
+                    <i class='bx bxs-spreadsheet'></i>
+                    <span class="links_name">Booking</span>
+                </a>
+                <span class="tooltip" style="text-align: center;">Booking Rooms</span>
+            </li>
+            <li>
+                <a href="order.html">
+                    <i class='bx bxs-coffee-alt'></i>
+                    <span class="links_name">Order </span>
+                </a>
+                <span class="tooltip">Order Refreshments</span>
+            </li>
+            <li>
+                <a href="#">
+                    <i class='bx bxs-user'></i>
+                    <span class="links_name">User</span>
+                </a>
+                <span class="tooltop">User Profile</span>
+            </li>
+
+        </ul>
+        <div class="profile_content">
+            
+                <i class='bx bx-log-out tooltip' id="logout"></i>
+                <span class="tooltop">Log out</span>
+            </div>
+        </div>
+
+
+
+    </div>
+    <div class="home_content">
+        <!-- <div class="text">Meeting Room Booking -->
+            <div class="container">
+                <h2>Booking Room</h2>
+                <form>
+                    <div class="input-field">
+                        <i class="fa fa-user"></i>
+                        <input type="text" placeholder="Name">
+
+                    </div>
+                    <div class="input-field">
+                        <i class="fa fa-envelope email"></i>
+                        <input type="email" placeholder="Email" required>
+                    </div>
+                    <div class="input-field">
+                        <i class="fa fa-phone"></i>
+                        <input type="tel" placeholder="phone">
+                    </div>
+                    <div class="input-field">
+                        <i class="fa fa-clock-o"></i>
+                        <input type="time" placeholder="Time">
+                    </div>
+                    <div class="input-field">
+                        <i class="fa fa-calendar"></i>
+                        <input type="date" placeholder="date">
+                    </div>
+                    <button><a class="link_btn" href="choose.html"> Choose Room</a></button>
+
+                </form>
+            </div>
+        <!-- </div> -->
+
+
+        <script>
+            let btn = document.querySelector("#btn");
+            let sidebar = document.querySelector(".sidebar");
+
+            btn.onclick = function () {
+                sidebar.classList.toggle("active");
+            }
+
+        </script>
+
+<style>
+    body{
+        overflow: hidden;
+    }
+</style>
+</body>
+
+</html>
