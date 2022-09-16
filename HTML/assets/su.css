@@ -1,13 +1,17 @@
+@import url('https://fonts.googleapis.com/css2? family=poppins:wght@300;400;600;700&display=swap');
 *{
    
     margin:0;
     padding: 0;
-    font-family:sans-serif;
+    font-family: "Poppins",sans-serif;
     box-sizing:border-box;
+    border: none;
+    outline: none;
+    color: #5e3b29;
    }
    h1{
     text-align:center;
-    color:green;
+    color:#5e3b29;
     padding:20px;
    }
   
@@ -19,7 +23,7 @@
     grid-gap:20px 40px;
   }
   .heading{
-    background-color:#cb202d;
+    background-color:#bca89f;
     color:#ffffff;
     margin-bottom:30px;
     padding:30px 0;
@@ -51,7 +55,7 @@
   padding:5px 30px;
   border:none;
   outline:none;
-  background-color:green;
+  background-image: linear-gradient(45deg,#9c6644, #8b6c5c);
   color:white;
   cursor:pointer;
   border-radius:4px;
@@ -78,4 +82,213 @@
 {     
 border: 3px solid pink;
 box-shadow: 5px 6px hotpink; 
+}
+body{
+  position: relative;
+  min-height: 100vh;
+  width: 100%;
+  overflow: scroll;
+   background-image: linear-gradient(45deg,#bca89f,#d8cbc4); 
+   background-color: #5e3b29;
+
+}
+.sidebar{
+  position: fixed;
+  top:0;
+  left: 0;
+  height: 100%;
+  width: 20px;
+  background-color: #fff;
+  padding:6px 14px;
+  transition: all 0.5 ease;
+  z-index: 1;
+}
+.sidebar{
+  width: 78px;
+  
+}
+.sidebar.active{
+  width: 300px;
+}
+.sidebar .logo_content .logo{
+  color: #765341;
+  display: flex;
+  height: 50px;
+  width: 100%;
+  align-items: center;
+}
+.logo_content .logo i{
+ 
+  font-size: 28px;
+  margin-right:5px;
+}
+
+.logo_content .logo .logo_name{
+  font-size: 20px;
+  font-weight: 200;
+}
+
+.sidebar #btn{
+  position: absolute;
+  color: #765341;
+  left: 50%;
+  top:6px;
+  font-size:20px;
+  height:30px;
+  width: 100px;
+  text-align:center;
+  line-height:30px;
+  transform:translateX(-50%);
+}
+.sidebar.sidebar.active #btn{
+  left:90%;
+}
+.logo_name{
+  margin-left: 25px;
+}
+
+.sidebar ul{
+  margin-top:20px;
+}
+ 
+.sidebar ul li {
+  position: relative;
+  height: 110px;
+  width: 100%;
+  margin: 0 5px;
+  list-style: none;
+  line-height: 110px;
+  border-radius: 12px;
+}
+.sidebar ul li .tooltip{
+  position:absolute;
+  left: 152px;
+  top:70%;
+  transform: translateY(-50%);
+  border-radius:6px;
+  height: 35px;
+  width: 155px;
+  background-color: #fff;
+  line-height: 40px;
+  text-align: left;
+ box-shadow: 0 5px 10px rgba(167, 32, 32, 0.2);
+ font-family: Arial, Helvetica, sans-serif;
+ font-weight: 10px;
+ transition: 0s;  
+   opacity: 0; 
+  pointer-events: none;
+}
+.sidebar ul li:hover .tooltip {
+  transition:all 0.5s ease;
+  opacity: 1; 
+  top:50%;
+}
+.tooltop{
+  position:absolute;
+  left: 152px;
+  top:70%;
+  transform: translateY(-50%);
+  border-radius:6px;
+  height: 35px;
+  width: 155px;
+  background-color: #fff;
+  line-height: 35px;
+  text-align: center;
+ box-shadow: 0 5px 10px rgba(167, 32, 32, 0.2);
+ font-family: Arial, Helvetica, sans-serif;
+ font-weight: 10px;
+ transition: 0s;  
+   opacity: 0; 
+  pointer-events: none;
+  display: block;
+}
+.sidebar ul li:hover .tooltop{
+  transition:all 0.5s ease;
+  opacity: 1; 
+  top:50%;
+}
+.sidebar.sidebar.active ul li .tooltip{
+  display:none;
+}
+
+
+.sidebar ul li input{
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  left:0;
+  top:0;
+  border-radius: 12px;
+  outline: none;
+  border:none;
+  background-color: #fff;
+  padding-left: 50px;
+  font-size: 18px;
+  color: #765341;
+}
+
+
+
+.sidebar ul li a{
+  color: #765341;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+
+i{
+  font-size: 3.1em;
+}
+
+.sidebar ul li a:hover{
+  color: #fff;
+  background-color: #765341;
+  border-radius: 12px;
+
+}
+.sidebar ul li a i{
+  height:50px;
+  min-width: 20px;
+  border-radius: 12px;
+  line-height: 50px;
+  text-align: center;
+  align-items: center;
+}
+.sidebar .links_name{
+  opacity: 0;
+  pointer-events: none;
+}
+.sidebar.active .links_name{
+  opacity: 1;
+  pointer-events: auto;
+}
+
+#logout{
+  color: #765341;
+
+}
+#logout:hover{
+  color: #fff;
+  background-color: #765341;
+  border-radius: 12px;
+  line-height: 120px;
+
+}
+.logout1{
+  line-height: 110px;
+  align-items: center;
+  text-align: center;
+  top:50%
+  
+}
+.home_content{
+  position: absolute;
+  height: 100%;
+  width: calc(100%-300px);
+  left:300px;
+}
+.separate{
+  left: 300px;
+  margin-left: 100px;
 }
