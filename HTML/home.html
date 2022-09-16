@@ -35,8 +35,8 @@
             <!-- f0r---------------------slider------------------- -->
             <section class="product"> 
                 <h2 class="product-category"></h2>
-                <button class="pre-btn"></button>
-                <button class="nxt-btn"></button>
+                <button class="pre-btn"><img src=""></button>
+                <button class="nxt-btn"><img src="images\arrow.png"></button>
                 <div class="product-container">
                     <div class="product-card">
                         <div class="product-image">
@@ -58,8 +58,8 @@
                         <div class="product-image">
                             <img src="images/img9.jpg" class="product-thumb" alt="">     
                         </div>
+                    
                         
-                  
                     
                     </div>
                     
@@ -122,46 +122,30 @@
         <h1 class="heading">Register</h1>
         <form action="">
             <div class="icon">
-            <input type="text" placeholder=   " name" class="box">
+            <input type="text" placeholder=" NAME" class="box">
             <i class="fas fa-user"></i>
             </div>
             <div class="icon">
-            <input type="email" placeholder=    " email" class="box">
+            <input type="email" placeholder="EMAIL" class="box">
             <i class="fas fa-envelope"></i>
             </div>
             <div class="icon">
-            <input type="tel" placeholder=     " number" class="box">
+            <input type="tel" placeholder="NUMBER" class="box">
             <i class="fa-solid fa-phone"></i>
             </div>
             <div class="icon">
-            <input type="password" placeholder="password" class="box">
+            <input type="password" placeholder="PASSWORD" class="box">
             <i class="fas fa-lock"></i>
             </div>
-            <input type="Submit" placeholder="submit" class="btn">
+            <input type="SUBMIT" placeholder="SUBMIT" class="btn">
             </form>
     </section>
    
 
 
     
-<script>
-    const productContainers = [...document.querySelectorAll('.product-container')];
-const nxtBtn = [...document.querySelectorAll('.nxt-btn')];
-const preBtn = [...document.querySelectorAll('.pre-btn')];
-
-productContainers.forEach((item, i) => {
-    let containerDimensions = item.getBoundingClientRect();
-    let containerWidth = containerDimensions.width;
-
-    nxtBtn[i].addEventListener('click', () => {
-        item.scrollLeft += containerWidth;
-    })
-
-    preBtn[i].addEventListener('click', () => {
-        item.scrollLeft -= containerWidth;
-    })
-})
-
+<script src="https://unpkg.com/swiper@7.0.0/swiper-bundle.min.js">
+    
 </script>
 </body>
 </html>
