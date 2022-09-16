@@ -5,10 +5,16 @@
     padding: 0;
     font-family: "Poppins",sans-serif;
     box-sizing:border-box;
+<<<<<<< HEAD
+}
+   body{background-color:#bca89f,#d8cbc4;}
+   
+=======
     border: none;
     outline: none;
     color: #5e3b29;
    }
+>>>>>>> e77b99188ef5dfebbccdfa0101384c38c5709063
    h1{
     text-align:center;
     color:#5e3b29;
