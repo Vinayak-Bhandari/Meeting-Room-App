@@ -35,8 +35,8 @@
             <!-- f0r---------------------slider------------------- -->
             <section class="product"> 
                 <h2 class="product-category"></h2>
-                <button class="pre-btn"><img src=""></button>
-                <button class="nxt-btn"><img src="images\arrow.png"></button>
+                <button class="pre-btn"></button>
+                <button class="nxt-btn"></button>
                 <div class="product-container">
                     <div class="product-card">
                         <div class="product-image">
@@ -144,8 +144,23 @@
 
 
     
-<script src="https://unpkg.com/swiper@7.0.0/swiper-bundle.min.js">
-    
+<script>
+   const productContainers = [...document.querySelectorAll('.product-container')];
+const nxtBtn = [...document.querySelectorAll('.nxt-btn')];
+const preBtn = [...document.querySelectorAll('.pre-btn')];
+
+productContainers.forEach((item, i) => {
+    let containerDimensions = item.getBoundingClientRect();
+    let containerWidth = containerDimensions.width;
+
+    nxtBtn[i].addEventListener('click', () => {
+        item.scrollLeft += containerWidth;
+    })
+
+    preBtn[i].addEventListener('click', () => {
+        item.scrollLeft -= containerWidth;
+    })
+}) 
 </script>
 </body>
 </html>
