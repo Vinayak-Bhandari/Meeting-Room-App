@@ -13,20 +13,20 @@
 <body>
     <header class="header">
         <div id="menu-btn" class="fas fa-bars"></div>
-        <b>
-        <a href="#" class="logo">planzo </a></b>
+        <i class="logo"> <img src="images/logo3.png" width="10%" height="7%" ></i> 
         <nav class="navbar">
         <b>
             <a href="#home">Home</a>
-            <a href="#about">About</a>
+            <a href="#aboutus">About</a>
             <a href="#features">Features</a>
         </b>
         </nav>
-        <a href="#" class="btn">Register</a>
+        <a href="#register" class="btn">Register</a>
     </header>
     <section class="home" id="home">
         <div class="row">
             <div class="content">
+                <h3 style="color:#d8cbc4 ;">_ </h3>
                 <b><h3>Meeting room booking application</h3></b> 
                 <h1>With only a couple of clicks and some filters, 
                     employees can book a conference room that fits their needs.</h1>               
@@ -72,7 +72,7 @@
             
     </section>
     <section class="about" id="about">
-        <h1 class="heading">about us<span></span></h1>
+        <h1 class="heading" id="aboutus">about us<span></span></h1>
     <div class="row">
         <div class="image">
             <img src="images\myimage2.jpg" alt="">
@@ -87,8 +87,8 @@
     </div>    
     </div>
     </section>
-    <section class="about" id="about">
-        <h1 class="heading">features<span></span></h1>
+    <section class="about" id="about" >
+        <h1 class="heading" id="features" >features <span></span></h1>
     <div class="row">
         <!-- <div class="image">
             <img src="images\myimage2.jpg" alt="">
@@ -119,26 +119,35 @@
     </div>
     </section>
     <section class="book" id="book">
-        <h1 class="heading">Register</h1>
-        <form action="">
+        <h1 class="heading" id="register" >Register</h1>
+        <form  onsubmit="return myfun()">
             <div class="icon">
-            <input type="text" placeholder=" NAME" class="box">
+            <input type="text" placeholder=" NAME" name="name" class="box"  required>
             <i class="fas fa-user"></i>
             </div>
             <div class="icon">
-            <input type="email" placeholder="EMAIL" class="box">
+            <input type="email" placeholder="EMAIL" name="email" class="box" required>
             <i class="fas fa-envelope"></i>
             </div>
             <div class="icon">
-            <input type="tel" placeholder="NUMBER" class="box">
+            <input type="tel" placeholder="PHONE" name="number" class="box" required>
             <i class="fa-solid fa-phone"></i>
             </div>
             <div class="icon">
-            <input type="password" placeholder="PASSWORD" class="box">
-            <i class="fas fa-lock"></i>
+           <input type="password" placeholder="PASSWORD" name="password" class="box" id="myInput" minlength="5" maxlength="25"  required pattern="[a-zA-z0-9]+">
+           
+        </div>
+        <span id="messages" style="color: red;"></span>
+        <div class="icon">
+            <i class="fas fa-lock"> <input type="tel" placeholder="Password" name="password" id="myInputs" class="box" required>
+           
             </div>
-            <!-- <input type="SUBMIT" placeholder="SUBMIT" class="btn"> -->
-            <button class="btn solid" value="SignUp"><a class="link_btn" href="login.html">Submit</a></button>
+            <input type="checkbox" onclick="myFunction()">Show Password</i>
+            
+            
+         <!-- <input type="SUBMIT" placeholder="SUBMIT" class="btn"> -->
+            <button class="btn solid" value="SignUp">Submit</button>
+            <!-- <button class="btn solid" value="SignUp"><a class="link_btn" href="login.html">Submit</a></button> -->
 
             </form>
     </section>
@@ -169,6 +178,28 @@ productContainers.forEach((item, i) => {
         item.scrollLeft -= containerWidth;
     })
 }) 
+function myFunction() {
+  var x = document.getElementById("myInput");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+function myfun(){
+a=document.getElementById("myInput").value;
+
+if(a==""){
+    document.getElementById("messages").innerHTML="**Please Enter the Password";
+    return false;
+}
+if(a.length<5){
+    documentById("messages").innerHTML="**Password length must be greater than 25 characters"
+    return false;
+}
+
+}
+
 </script>
 </body>
 </html>
