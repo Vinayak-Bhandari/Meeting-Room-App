@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <link rel="stylesheet" href="assets/style3.css">
+    <link rel="stylesheet" href="assets/style2.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/swiper@7.0.0/swiper-bundle.min.css">
@@ -13,14 +13,11 @@
 <body>
     <header class="header">
         <div id="menu-btn" class="fas fa-bars"></div>
-        
-            
-        <!-- <a href="#" class="logo">planzo </a></b> -->
-      <i class="logo"> <img src="images/logo3.png" width="10%" height="8%" ></i> 
+        <i class="logo"> <img src="images/logo3.png" width="10%" height="7%" ></i> 
         <nav class="navbar">
         <b>
             <a href="#home">Home</a>
-            <a href="#about">About</a>
+            <a href="#aboutus">About</a>
             <a href="#features">Features</a>
         </b>
         </nav>
@@ -29,16 +26,17 @@
     <section class="home" id="home">
         <div class="row">
             <div class="content">
+                <h3 style="color:#d8cbc4 ;">_ </h3>
                 <b><h3>Meeting room booking application</h3></b> 
                 <h1>With only a couple of clicks and some filters, 
                     employees can book a conference room that fits their needs.</h1>               
-                <!-- <b><a href="#" class="btn" onclick="submit()">Explore</a></b> -->
+                <b><a href="#" class="btn" onclick="submmit()">Explore</a></b>
             </div>
             <!-- f0r---------------------slider------------------- -->
             <section class="product"> 
                 <h2 class="product-category"></h2>
-                <button class="pre-btn"><img src="" alt=""></button>
-                <button class="nxt-btn"><img src="images\arrow.png" alt=""></button>
+                <button class="pre-btn"></button>
+                <button class="nxt-btn"></button>
                 <div class="product-container">
                     <div class="product-card">
                         <div class="product-image">
@@ -61,6 +59,8 @@
                             <img src="images/img9.jpg" class="product-thumb" alt="">     
                         </div>
                     
+                        
+                    
                     </div>
                     
                     
@@ -72,7 +72,7 @@
             
     </section>
     <section class="about" id="about">
-        <h1 class="heading">about us<span></span></h1>
+        <h1 class="heading" id="aboutus">about us<span></span></h1>
     <div class="row">
         <div class="image">
             <img src="images\myimage2.jpg" alt="">
@@ -87,8 +87,8 @@
     </div>    
     </div>
     </section>
-    <section class="about" id="about">
-        <h1 class="heading"><a id="features"></a>features</h1>
+    <section class="about" id="about" >
+        <h1 class="heading" id="features" >features <span></span></h1>
     <div class="row">
         <!-- <div class="image">
             <img src="images\myimage2.jpg" alt="">
@@ -113,65 +113,48 @@
             <img src="images\myimage6 - Copy.webp" alt="">
             <h3>Automated communication</h3>
         </div>
-        <div class="icons">
-            <img src="images\myimage7.jpg" alt="">
-            <h3>Flexibility</h3>
-        </div>
+        
        </div>
     </div>    
     </div>
     </section>
-    <!-- <section class="book" id="book">
-        <h1 class="heading" ><a id="register">Register</h1>
-        <form action="">
+    <section class="book" id="book">
+        <h1 class="heading" id="register" >Register</h1>
+        <form action="" name="reg_form" onsubmit="return validate()">
             <div class="icon">
-            <input type="text" placeholder=" name" class="box">
+            <input type="text" placeholder=" NAME" name="name" class="box" required>
             <i class="fas fa-user"></i>
             </div>
             <div class="icon">
-            <input type="email" placeholder=" email" class="box">
-            <i class="fas fa-user"></i>
+            <input type="email" placeholder="EMAIL" name="email" class="box" required>
+            <i class="fas fa-envelope"></i>
             </div>
-            <input type="tel" placeholder=" number" class="box">
-            <input type="password" placeholder="password" class="box">
+            <div class="icon">
+            <input type="tel" placeholder="NUMBER" name="number" class="box" required>
+            <i class="fa-solid fa-phone"></i>
+            </div>
+            <div class="icon">
+            <input type="password" placeholder="PASSWORD" name="password" class="box" required>
+            <i class="fas fa-lock"></i>
+            </div>
+            <!-- <input type="SUBMIT" placeholder="SUBMIT" class="btn"> -->
+            <button class="btn solid" value="SignUp">Submit</button>
+            <!-- <button class="btn solid" value="SignUp"><a class="link_btn" href="login.html">Submit</a></button> -->
 
-<button class="btn"><a href="login.html" >Submit</a></button>
-        </form>
-    </section> -->
-    <div class="container">
-       
-        <div class="signin-signup">
-            <form method="post" action="login.html" class="sign-in-form">
-                <div style="margin-top:10% ;"></div>
-                <h2 class="title" ><a id="register">Registration</a></h2>
-                <div class="input-field">
-                    <i class="fas fa-user"></i>
-                        <input type="text" placeholder="Username"/>
-                      </div>
-                      <div class="input-field">
-                        <i class="fas fa-envelope"></i>
-                        <input type="email" placeholder=" email" class="box">
-                        
-                        </div>
-                <div class="input-field">
-                    <i class="fas fa-lock"></i>
-                        <input type="password" placeholder="password"/>
-                        </div>
-                        
-                        <button class="btn solid" value="SignUp"><a class="link_btn" href="login.html">SignUp</a></button>
-                        
-                        
-                         
-    
-                        </div>
             </form>
-        </div>
-        
+    </section>
+   
 
 
     
-<script src="https://unpkg.com/swiper@7.0.0/swiper-bundle.min.js">
-    const productContainers = [...document.querySelectorAll('.product-container')];
+<script>
+    document.querySelectorAll('.image-slider img'). forEach(image =>{
+        images.onclick= () =>{
+            var src =images.getAttribute('src');
+            document.querySelector('.main-home-image').src=src;
+        };
+    })
+   const productContainers = [...document.querySelectorAll('.product-container')];
 const nxtBtn = [...document.querySelectorAll('.nxt-btn')];
 const preBtn = [...document.querySelectorAll('.pre-btn')];
 
@@ -186,7 +169,8 @@ productContainers.forEach((item, i) => {
     preBtn[i].addEventListener('click', () => {
         item.scrollLeft -= containerWidth;
     })
-})
+}) 
+
 </script>
 </body>
 </html>
