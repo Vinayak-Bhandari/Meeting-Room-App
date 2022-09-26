@@ -145,7 +145,7 @@ section{
     }
 }
 .heading{
-    font-size:9rem;
+    font-size:5rem;
     text-transform: uppercase;
     color: transparent;
     -webkit-text-stroke:.05rem var(--main-color);
