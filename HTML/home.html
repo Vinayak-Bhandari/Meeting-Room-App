@@ -130,6 +130,7 @@
         <h1 class="heading" id="register">Register</h1>
         <form method="get">
             <div class="icon">
+<<<<<<< HEAD
                 <input type="text" placeholder=" NAME" id="username" name="name" class="box" required>
 
             </div>
@@ -157,6 +158,34 @@
 
             <!-- <input type="SUBMIT" placeholder="SUBMIT" class="btn"> -->
             <!-- <button class="btn solid" value="SignUp"><a class="link_btn" href="login.html">Submit</a></button> -->
+=======
+            <input type="text" placeholder=" NAME" name="name" class="box"  required>
+            <!-- <i class="fas fa-user"></i> -->
+            </div>
+            <div class="icon">
+            <input type="email" placeholder="EMAIL" name="email" class="box" required>
+            <!-- <i class="fas fa-envelope"></i> -->
+            </div>
+            <div class="icon">
+            <input type="tel" placeholder="PHONE" name="number" class="box" required>
+            <!-- <i class="fa-solid fa-phone"></i> -->
+            </div>
+            <div class="icon">
+           <input type="password" placeholder="PASSWORD" name="password" class="box" id="myInput" minlength="7" maxlength="25"  required pattern="[a-zA-Z0-9]+">
+           
+        </div>
+        <span id="messages" style="color: red;"></span>
+        <div class="icon">
+            <i class="fas fa-lock"> <input type="tel" placeholder="Password" name="password" id="myInputs" class="box" required>
+           
+            </div>
+            <input type="checkbox" onclick="myFunction()">Show Password</i>
+            
+            
+         <!-- <input type="SUBMIT" placeholder="SUBMIT" class="btn"> -->
+           <!-- <button class="btn solid" value="SignUp">Submit</button> -->
+            <button class="btn solid" value="SignUp"><a class="link_btn" href="login.html">Submit</a></button> 
+>>>>>>> 123c85f35285a2bafc1246aaa369bb1614d67785
 
         </form>
         <div class="icon">
@@ -243,6 +272,7 @@
         }
     </script>
 <script>
+<<<<<<< HEAD
     function myFunction() {
         var x = document.getElementById("pass");
         if (x.type === "password") {
@@ -252,6 +282,53 @@
         }
       }
     </script>
+=======
+    document.querySelectorAll('.image-slider img'). forEach(image =>{
+        images.onclick= () =>{
+            var src =images.getAttribute('src');
+            document.querySelector('.main-home-image').src=src;
+        };
+    })
+   const productContainers = [...document.querySelectorAll('.product-container')];
+const nxtBtn = [...document.querySelectorAll('.nxt-btn')];
+const preBtn = [...document.querySelectorAll('.pre-btn')];
+
+productContainers.forEach((item, i) => {
+    let containerDimensions = item.getBoundingClientRect();
+    let containerWidth = containerDimensions.width;
+
+    nxtBtn[i].addEventListener('click', () => {
+        item.scrollLeft += containerWidth;
+    })
+
+    preBtn[i].addEventListener('click', () => {
+        item.scrollLeft -= containerWidth;
+    })
+}) 
+function myFunction() {
+  var x = document.getElementById("myInput");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+function myfun(){
+a=document.getElementById("myInput").value;
+
+if(a==""){
+    document.getElementById("messages").innerHTML="**Please Enter the Password";
+    return false;
+}
+if(a.length<5){
+    documentById("messages").innerHTML="**Password length must be greater than 7 characters"
+    return false;
+}
+
+}
+
+</script>
+>>>>>>> 123c85f35285a2bafc1246aaa369bb1614d67785
 </body>
 
 </html>
