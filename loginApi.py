@@ -1,4 +1,4 @@
-from flask import Flask,request,render_template
+from flask import Flask,request,render_template,jsonify
 from flask_cors import CORS
 import psycopg2
 import psycopg2.extras
@@ -8,8 +8,13 @@ import  json
 app = Flask(__name__)
 CORS(app)
 
+#Tanushree Database credential
 conn = psycopg2.connect(dbname="sql_demo", user="postgres",
                     password="currentele" , host="127.0.0.1")
+
+#Vinayak Database credential
+# conn = psycopg2.connect(dbname="postgres", user="postgres",
+#                     password="123456" , host="127.0.0.1")
 
 cursor = conn.cursor()
 def execute_query(query):
@@ -61,6 +66,45 @@ def register():
     cursor.execute(query)
     conn.commit()
     return {"message":"Register Successfully","status":True}
+
+
+@app.route('/bookingStatus',methods=['POST', 'GET'])
+def sellerform():
+    cursor = conn.cursor()
+    req = request.get_json()
+    name = req['name']
+    email=req['email']
+    phone=req['phone']
+    time=req['time']
+    date=req['date']
+
+    if request.method == 'POST':
+        if name and email and phone and time and date :
+            cursor = conn.cursor()
+            sql = '''INSERT INTO public."bookingStatus" (name,email,phone,time,date)  VALUES ('{0}' ,'{1}' ,'{2}','{3}','{4}')'''.format(
+                            name,email,phone,time,date)
+           
+            cursor.execute(sql)
+                    
+            conn.commit()
+            cursor.close()
+            resp = jsonify({'message': 'Room Booked Successfully', "status": True})
+            resp.status_code = 200
+            return resp
+
+        
+
+        # For empty values of email , password , username
+        elif name == '' or email == '' or phone == '' or time == '' or date== '':
+            resp = jsonify(
+                {'message': 'Please fill the form correctly', 'status': False})
+            resp.status_code = 200
+            return resp
+    elif request.method == 'GET':
+        resp = jsonify(
+            {'message': 'Bad Request! , Please check your request method', 'status': False})
+        resp.status_code = 400
+        return resp
 
     
        
