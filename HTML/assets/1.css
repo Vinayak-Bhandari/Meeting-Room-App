@@ -1,6 +1,6 @@
 body{
     margin:0;
-    font-family: "Inter", sans-serif;
+    font-family: 'Bentham', serif;
     font-size: 20px;
 }
 .section{
@@ -49,10 +49,10 @@ a.button{
     border:0.15em solid #CCCCCC;
     box-sizing: border-box;
     text-decoration:none;
-    font-family:'Segoe UI','Roboto',sans-serif;
+    font-family:'Raleway', sans-serif;
     font-weight:400;
     color: #fff;;
-    background-color:#000000;
+    background-color:#79b0a1;
     text-align:center;
     position:relative;
     border-radius: 25px;
@@ -77,5 +77,5 @@ a.button{
         font-size: 45px;
         font-weight: 600;
         text-decoration: none;
-        color: #000000;
+        color: #79b0a1;
       }
