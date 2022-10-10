@@ -56,7 +56,7 @@
         response.json()).then(json => {
           if (json.status === true) {
             localStorage.setItem("userDetails",JSON.stringify([username,password]));
-            location.href = "choose.html";
+            location.href = "select.html";
             alert(json.message)
 
           } else {

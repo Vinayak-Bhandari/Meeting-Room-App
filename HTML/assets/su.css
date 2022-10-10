@@ -292,3 +292,8 @@ i{
   
   margin-left: 100px;
 }
+
+.adjust{
+  float:right;
+  width: 10px;
+}
