@@ -1,6 +1,6 @@
 body{
     margin:0;
-    font-family: "Inter", sans-serif;
+    font-family: 'Bentham', serif;
     font-size: 20px;
 }
 .section{
@@ -14,25 +14,30 @@ body{
     padding-top: 5%;
     padding-right: 5%;
     padding-bottom: 5%;
+    text-decoration: none;
 }
 
 .section img{
     width: 50%;
     margin: 30px;
+    text-decoration: none;
 }
 
 .section h3{
     color:black;
     margin-left: 05%;
+    text-decoration: none;
     
 }
 .section h2{
     color:black;
     margin-left: 05%;
+    text-decoration: none;
 }
 .section p{
     color: black;
     margin-left: 10%;
+    text-decoration: none;
 }
 
 
@@ -44,23 +49,33 @@ a.button{
     border:0.15em solid #CCCCCC;
     box-sizing: border-box;
     text-decoration:none;
-    font-family:'Segoe UI','Roboto',sans-serif;
+    font-family:'Raleway', sans-serif;
     font-weight:400;
     color: #fff;;
-    background-color:#000000;
+    background-color:#79b0a1;
     text-align:center;
     position:relative;
     border-radius: 25px;
+    outline: none;
     }
     a.button:hover{
     border-color:#7a7a7a;
+    text-decoration: none;
     }
     a.button:active{
     background-color:#999999;
+    text-decoration: none;
     }
     @media all and (max-width:30em){
     a.button{
     display:block;
     margin:0.2em auto;
+    text-decoration: none;
     }
     }
+    .close {
+        font-size: 45px;
+        font-weight: 600;
+        text-decoration: none;
+        color: #79b0a1;
+      }

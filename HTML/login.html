@@ -1,29 +1,84 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<link rel="stylesheet" href="assets/style.css">
-<title> CSS Login Screen Tutorial </title>
+  <link rel="stylesheet" href="assets/style.css">
+  <title> CSS Login Screen Tutorial </title>
 </head>
+
 <body>
-  <img src="images/logo4.png" width="5%" height="3%" >
+  <img src="images\logo3-removebg-preview.png" width="5%" height="3%">
   <!-- <i class="title">Planzo</i> -->
-    <div class="login-page">
-   
-      <div class="form">
-        <div class="login">
-          <div class="login-header">
-            <h3>LOGIN</h3>
-            <p>Please enter your credentials to login.</p>
-          </div>
+  <div class="login-page">
+
+    <div class="form" >
+      <div class="login">
+        <div class="login-header">
+          <h3>LOGIN</h3>
+          <p>Please enter your credentials to login.</p>
         </div>
-        <form class="login-form">
-          <input type="text" placeholder="username"/>
-          <input type="password" placeholder="password"/>
-           <button class="btn solid" value="SignUp"><a class="link_btn" href="book.html">Login</a></button>
-          
-        </form>
       </div>
+      <form class="login-form" method="get" action="occupied.html">
+        <input type="text" id="username" placeholder="username" />
+        <input type="password" id="password" placeholder="password" />
+        <!-- <select name="User" class="dropdown">
+          <div class="dropdown-content">
+          <option value="Admin">Admin</option>
+          <option value="Employee">Employee</option>
+          </div> -->
+          
+        </select>
+        
+        
+        <!-- <button class="btn solid" value="SignUp"><a class="link_btn" href="occupied.html">Login</a></button> -->
+
+      </form>
+      <button class="btn solid" onclick="makeGetRequest()" value="SignUp">Login</button>
+
     </div>
+  </div>
+  <script>
+    function makeGetRequest() {
+
+      var username = document.getElementById('username').value;
+      var password = document.getElementById('password').value;
+      console.log(username, password)
+      fetch("http://127.0.0.1:5000/login", {
+        method: "POST",
+        body: JSON.stringify({
+          username: username,
+          password: password             
+        }), headers: {
+          "Content-type": "application/json;charset=UTF-8"
+        }
+
+      }).then(response =>
+        response.json()).then(json => {
+          if (json.status === true) {
+            localStorage.setItem("userDetails",JSON.stringify([username,password]));
+            location.href = "select.html";
+            alert(json.message)
+
+          } else {
+            alert(json.message)
+          }
+
+        })
+      // axios.get(path).then(
+      //     (response) => {
+      //         var result = response.data;
+      //         console.log(result);
+      //     },
+      //     (error) => {
+      //         console.log(error);
+      //     }
+
+      // );
+    }
+
+
+
+  </script>
 </body>
 
 </html>
