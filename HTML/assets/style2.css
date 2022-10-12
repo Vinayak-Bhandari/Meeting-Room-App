@@ -88,6 +88,7 @@ section{
 }
 .home .row .content{
     flex: 1 1 42rem;
+    padding-left: 10px;
 }
 .home .row .image{
    flex: 1 1 42rem;
@@ -424,10 +425,6 @@ section{
     border:var(--border);
     margin: .7rem 0;
   }
-  body{
-    background-image: linear-gradient(45deg,#bca89f,#d8cbc4);
-
-  }
   .container{
     position: relative;
     width:100%;
@@ -499,4 +496,7 @@ form{
 }
 .size{
   font-size: 16px;
+}
+body {
+  background-color: #f2eee3;
 }
