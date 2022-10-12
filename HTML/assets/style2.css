@@ -88,6 +88,7 @@ section{
 }
 .home .row .content{
     flex: 1 1 42rem;
+    padding-left: 10px;
 }
 .home .row .image{
    flex: 1 1 42rem;
@@ -424,10 +425,13 @@ section{
     border:var(--border);
     margin: .7rem 0;
   }
+<<<<<<< HEAD
   body{
     background-color: #f2eee3;
 
   }
+=======
+>>>>>>> f38b57f32a6a68160d29f0ee4a716eed2922d2d8
   .container{
     position: relative;
     width:100%;
@@ -499,4 +503,7 @@ form{
 }
 .size{
   font-size: 16px;
+}
+body {
+  background-color: #f2eee3;
 }
