@@ -81,7 +81,7 @@ def sellerform():
     date=req['date']
     
     
-    message= """Congratulation!Your Reservation at %s for the Meeting Room is confirmed"""%(time)
+    message= """Congratulation!Your Reservation for the Meeting Room is confirmed"""
     
     try:
         smtpObj=smtplib.SMTP("smtp.gmail.com",587)
@@ -120,17 +120,9 @@ def sellerform():
             {'message': 'Bad Request! , Please check your request method', 'status': False})
         resp.status_code = 400
         return resp
+       
 
-@app.route('/admin')
-def admin():
-    cursor = conn.cursor()
-    
-    sql = '''SELECT * from public."bookingStatus" '''
-    cursor.execute(sql)
-                    
-    books = cursor.fetchall()
-    cursor.close()
-    conn.close()
+
     
           
 
