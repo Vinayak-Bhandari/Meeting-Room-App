@@ -1,73 +1,133 @@
-from flask import Flask,request,render_template,jsonify
+# -*- coding: utf-8 -*-
+"""
+Created on Wed Oct 12 15:52:53 2022
+
+@author: User
+"""
+from flask import Flask,request,jsonify
 from flask_cors import CORS
 import psycopg2
 import psycopg2.extras
-import  json
-# import pandas as pd
-# import json
+import pandas as pd
+import json
 app = Flask(__name__)
 CORS(app)
 
-#Tanushree Database credential
-conn = psycopg2.connect(dbname="sql_demo", user="postgres",
-                    password="currentele" , host="127.0.0.1")
 
-#Vinayak Database credential
-# conn = psycopg2.connect(dbname="postgres", user="postgres",
-#                     password="123456" , host="127.0.0.1")
-
-cursor = conn.cursor()
-def execute_query(query):
-    cursor=conn.cursor()
-    try:
-     cursor.execute(query)
-     data=cursor.fetchall()
-    except:
-        data=''
-    
-    return data
-    
-
+conn = psycopg2.connect(dbname="postgres", user="postgres",password="123456" , host="127.0.0.1")
+print('Connected Successfully!!')
 @app.route('/login',methods=["GET","POST"])
 def login():
+    cursor = conn.cursor()
     req = request.get_json()
     username = req['username']
-    password=req['password']
-    # username=request.args.get('username')
-    # password=request.args.get('password')
+    _password=req['password']
     
-    execute_query("rollback")
-    query='''select 1 from public.login where username='{}' and password='{}' '''.format(username,password)
-    print(query)
+    if request.method == 'POST':
+        if username and _password:
+            # check user exists
+            cursor = conn.cursor()
+            # query to fetch the user details
+            query='''select username,password,user_Id,user_type from public."Login" where username='{}' '''.format(username)
+            print(query)
     
-    data=execute_query(query)
-    
-    if(len(data)>0):
-        return {"message":"login_success","status":True}
-    
-    else :
-        return {"message":"login failure","status":False}
-       
+            cursor.execute(query)
+            row = cursor.fetchone()
+            
+            try:
+                
+                username = row[0]
+                password = row[1]
+                user_id=row[2]
+                user_types=row[3]
+            except:
+                pass
+            
+                
+            if(row==None):
+                resp = jsonify(
+                    {'message': 'Entered Username and Password does not exist, Please register', 'status': False})
+                resp.status_code = 200
+                return resp
+            # checking the user password is correct or not
+            if row:
+                if (_password==password):
+                    cursor.close()
+                    resp = jsonify({'message': 'Login Successfully', 'user_type':user_types,'user_id':user_id, 'status': True})
+                    resp.status_code = 200
+                    return resp
 
+                # for invalid password
+                else:
+                    resp = jsonify(
+                        {'message': 'Please enter correct password', 'status': False})
+                    resp.status_code = 200
+                    return resp
+
+            # invalid email
+            else:
+                resp = jsonify(
+                    {'message': 'Enter valid email', 'status': False})
+                resp.status_code = 200
+                return resp
+
+        # empty values of email , password
+        elif username == '' or password == '':
+            resp = jsonify(
+                {'message': 'Please fill your form correctly', 'status': False})
+            resp.status_code = 200
+            return resp
+
+    # Bad request with invalid method
+    elif request.method == 'GET':
+        resp = jsonify(
+            {'message': 'Bad Request! , Please check your request method', 'status': False})
+        resp.status_code = 400
+        return resp
+    
 @app.route('/register',methods=["GET","POST"])
 def register():
+    cursor = conn.cursor()
     req = request.get_json()
     username = req['username']
     email=req['email']
     password=req['password']
     phone=req['phone']
-    # username=request.args.get('username')
-    # password=request.args.get('password')
+    
+    if request.method=='POST':
+        if username and email and password and phone:
+            cursor.execute('''SELECT * from public."Login" where username='{}' '''.format(username))
+            if cursor.fetchone() is not None:
+                resp = jsonify(
+                                {'message': 'Entered username  already exist , Please login', 'alreadyexist': True, "status": False})
+                resp.status_code = 200
+                return resp
    
-    query='''insert into public.login (username , password , phone , email) values ('{0}' , '{1}' , '{2}' , '{3}')'''.format(username,password,phone,email)
+            query='''insert into public."Login"(username , password , phone , email) values ('{0}' , '{1}' , '{2}' , '{3}')'''.format(username,password,phone,email)
     
-    print(query)
+            print(query)
     
-    cursor.execute(query)
-    conn.commit()
-    return {"message":"Register Successfully","status":True}
+            cursor.execute(query)
+            conn.commit()
+            cursor.close()
+            esp = jsonify(
+                {'message': 'Registered Successfully', "status": True})
+            resp.status_code = 200
+            return resp
+ 
+        elif username== '' or password == '' or email == '' or phone == '':
+            resp = jsonify(
+                {'message': 'Please enter missed keys', 'status': False})
+            resp.status_code = 200
+            return resp
+    elif request.method == 'GET':
+        resp = jsonify(
+            {'message': 'Bad Request! , Please check your request method', 'status': False})
+        resp.status_code = 400
+        return resp
 
 
+    
 @app.route('/bookingStatus',methods=['POST', 'GET'])
 def sellerform():
     cursor = conn.cursor()
@@ -77,12 +137,16 @@ def sellerform():
     phone=req['phone']
     time=req['time']
     date=req['date']
+    room_id=req['room_id']
+    user_id=req['user_id']
+    room_name=req['room_name']
+    room_url=req['room_url']
 
     if request.method == 'POST':
         if name and email and phone and time and date :
             cursor = conn.cursor()
-            sql = '''INSERT INTO public."bookingStatus" (name,email,phone,time,date)  VALUES ('{0}' ,'{1}' ,'{2}','{3}','{4}')'''.format(
-                            name,email,phone,time,date)
+            sql = '''INSERT INTO public."bookingStatus" (name,email,phone,time,date,room_id,user_id,room_name,room_url)  VALUES ('{0}' ,'{1}' ,'{2}','{3}','{4}','{5}','{6}','{7}','{8}')'''.format(
+                            name,email,phone,time,date,room_id,user_id,room_name,room_url)
            
             cursor.execute(sql)
                     
@@ -92,21 +156,105 @@ def sellerform():
             resp.status_code = 200
             return resp
 
-        
-
         # For empty values of email , password , username
         elif name == '' or email == '' or phone == '' or time == '' or date== '':
             resp = jsonify(
                 {'message': 'Please fill the form correctly', 'status': False})
-            resp.status_code = 200
+            resp.status_code = 200  
             return resp
     elif request.method == 'GET':
         resp = jsonify(
             {'message': 'Bad Request! , Please check your request method', 'status': False})
         resp.status_code = 400
         return resp
-
     
-       
+    
+@app.route('/meetingRoom',methods=["GET","POST"])
+def meetingRoom():
+    cursor = conn.cursor()
+    req = request.get_json()
+    # room_id=req['room_id']
+    roomCategary = req['room_category']
+    
+    if request.method == 'POST':
+   # Bad request of invalid method
+            cursor = conn.cursor()
+            if(roomCategary=="small"):
+                sql = ''' SELECT * FROM public."meetingRoom" where room_category='small' '''
+            if(roomCategary=="medium"):
+                sql = '''SELECT * FROM public."meetingRoom" where room_category='medium' '''  
+            if(roomCategary=="Large"):
+                sql = '''SELECT * FROM public."meetingRoom" where room_category='Large' '''
+            cursor.execute(sql)
+            row = cursor.fetchall()
+            # checking the token access and reseting the password
+            if row:
+                # if 'username' in session:
+                if row != None:
+                    conn.commit()
+                    cursor.close()
+                    output = []
+                    for s in row:
+                        output.append({"room_id": s[0],
+                                       "room_name": s[1],
+                                       "room_description": s[2].replace('\n',''),
+                                       "room_url": s[3],
+                                       "inner_description":s[4].replace('\n',''),
+                                       "room_availability":s[5].replace('\n','').split(',')
+                                       })
+
+                    # print(output)
+                    return {"data" : output}
+
+    # For invalid method
+    elif request.method == 'POST':
+        return jsonify({'message': 'Bad Request! , Please check your request method', 'status': False})
+    
+    
+@app.route('/perticularProduct',methods=['GET','POST'])
+def product():
+        cursor = conn.cursor()
+        req = request.get_json()
+        room_id = req['room_id']
+    
+        cursor = conn.cursor()
+        query='SELECT * FROM public."meetingRoom" where room_id={}'.format(room_id);
+        cursor.execute(query)
+        data=cursor.fetchall()
+        output=[]
+        for s in data:
+            output.append({"room_id": s[0],
+                                       "room_name": s[1],
+                                       "room_description": s[2].replace('\n',''),
+                                       "room_url": s[3],
+                                       "inner_description":s[4].replace('\n',''),
+                                       "room_availability":s[5].replace('\n','').split(',')
+                                       })
+        return{"roomData":output}
+  
+
+@app.route('/alreadyBooked',methods=['GET','POST'])
+def Booked():
+        cursor = conn.cursor()
+        query=''' SELECT name,phone,time,date,room_name,room_url FROM public."bookingStatus" ''';
+        cursor.execute(query)
+        data=cursor.fetchall()
+        output=[]
+        for s in data:
+            output.append({"name": s[0],
+                                       "phone": s[1],
+                                       "time": s[2].strftime("%H:%M:%S"),
+                                       "date": s[3].strftime("%d-%m-%Y"),
+                                       "room_name":s[4],
+                                       "room_url":s[5]
+                                       })
+        return {"bookedData":output}
+    
+    
+    
+    
 if __name__ == '__main__':
-    app.run()
+   app.run()
+   
+   
+  

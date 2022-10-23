@@ -425,13 +425,10 @@ section{
     border:var(--border);
     margin: .7rem 0;
   }
-<<<<<<< HEAD
   body{
     background-color: #f2eee3;
 
   }
-=======
->>>>>>> f38b57f32a6a68160d29f0ee4a716eed2922d2d8
   .container{
     position: relative;
     width:100%;

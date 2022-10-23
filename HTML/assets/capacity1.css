@@ -1,9 +1,9 @@
-.container{
+/* .container{
     max-width:1200px;
     margin:0 auto;
     padding:1.5rem;
   }
-  
+   */
   .menu{
     font-family:'Bentham', serif ;
     font-size: 14px;
@@ -20,14 +20,15 @@
     .wrapper {
       float:left;
       height: 250px;
-      width: 554px;
-      margin: 50px auto;
+      width: 540px;
+      /* width: 520px; */
+      margin: 10px 20px 20px 40px;
       border-radius: 7px 7px 7px 7px;
       -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
       -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
       box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
     }
-    .wrapper1 {
+    /* .wrapper1 {
       float:right;
       height: 250px;
       width: 554px;
@@ -36,7 +37,7 @@
       -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
       -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
       box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
-    }
+    } */
   
     
     

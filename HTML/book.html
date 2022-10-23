@@ -2,29 +2,30 @@
 <html lang="en" dir="ltr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Planzo-Meeting Room Booking</title>
-    <link rel="stylesheet" href="assets/bookdesign.css">
+    <title>Room Booking</title>
+    <link rel="stylesheet" href="assets/style.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
     <!-- Add icon library -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
 </head>
 
 <body>
-    <div class="sidebar">
+    <script>
+        var haveaccess = localStorage.getItem('userDetails');
+        if (haveaccess) {
+
+        } else {
+            location.href = 'login.html'
+        }
+    </script>
+    <!-- <div class="sidebar">
         <div class="logo_content">
-            <!-- <div class="logo">
-     <img src="images/logo3.png" width="23%">
- <p class="logo_name">Planzo</p>
- <i class='bx bx-menu' id="btn"></i> -->
+    
         </div>
         <ul class="nav_list">
             <div class="logo">
                 <img src="images/logo3.png" width="50px">
-                <!-- <p class="logo_name">Planzo</p> -->
+        
                 <i class='bx bx-menu' id="btn"></i>
             </div>
 
@@ -59,52 +60,56 @@
 
         </ul>
         <div class="profile_content">
-            
-                <a href="login.html"><i class='bx bx-log-out tooltip' id="logout"></i>
+
+            <a href="login.html"><i class='bx bx-log-out tooltip' id="logout"></i>
                 <span class="tooltop">Log out</span></a>
-            </div>
         </div>
-
-
-
     </div>
-    <div>
-    <div class="home_content">
-        <!-- <div class="text">Meeting Room Booking -->
-            <div class="container">
-                <h2>Booking Room</h2>
-                <form>
-                    <div class="input-field">
-                        <i class="fa fa-user"></i>
-                        <input type="text" id="name" placeholder="Name">
 
-                    </div>
-                    <div class="input-field">
-                        <i class="fa fa-envelope email"></i>
-                        <input type="email"  id="email" placeholder="Email" required>
-                    </div>
-                    <div class="input-field">
-                        <i class="fa fa-phone"></i>
-                        <input type="tel" id="phone" placeholder="phone">
-                    </div>
-                    <div class="input-field">
-                        <i class="fa fa-clock-o"></i>
-                        <input type="time" id="time" placeholder="Time">
-                    </div>
-                    <div class="input-field">
-                        <i class="fa fa-calendar"></i>
-                        <input type="date" id="date" placeholder="date">
-                    </div>
-                    <!-- <button class="link_btn" onclick="makeGetRequest()">Confirm</button> -->
 
-                </form>
-              <button class="link_btn center cease" onclick="makeGetRequest()">Confirm</button>  
+
+    </div> -->
+    <img src="images\Logout10.png" width="3%" height="3%" onclick="logout()" style="cursor: pointer;"
+        title="Click to Logout">
+
+    <div class="register-page">
+
+        <div class="form form1">
+            <div class="login">
+                <div class="login-header">
+                    <h3 style="margin-bottom: 2px;">Booking Room</h3>
+                    <p>Please enter your credentials to book Room.</p>
+                </div>
             </div>
-            </div>
-        <!-- </div> -->
+            <form class="login-form" id="formReset">
+                <div class="icon">
+                    <input type="text" id="name" placeholder="Name" class="box">
+                    <i class="fa fa-user"></i>
+                </div>
+                <div class="icon">
+                    <input type="email" id="email" placeholder="Email" class="box" required>
+                    <i class="fa fa-envelope email"></i>
+                </div>
+                <div class="icon">
+                    <input type="tel" id="phone" placeholder="phone" class="box">
+                    <i class="fa fa-phone"></i>
+                </div>
+                <div class="icon">
+                    <input type="time" id="time" placeholder="Time" class="box">
+                    <i class="fa fa-clock-o"></i>
+                </div>
+                <div class="icon">
+                    <input type="date" id="date" placeholder="date" class="box">
+                    <i class="fa fa-calendar"></i>
+                </div>
 
 
-        <script>
+            </form>
+            <button class="btn solid" onclick="makeGetRequest()">Confirm</button>
+        </div>
+    </div>
+
+    <!-- <script>
             let btn = document.querySelector("#btn");
             let sidebar = document.querySelector(".sidebar");
 
@@ -112,47 +117,98 @@
                 sidebar.classList.toggle("active");
             }
 
-        </script>
-        <script>
-            function makeGetRequest() {
-    
-                var name = document.getElementById('name').value;
-                var email = document.getElementById('email').value;
-                var phone = document.getElementById('phone').value;
-                var time = document.getElementById('time').value;
-                var date = document.getElementById('date').value;
-                // console.log(username, password,email,phone)
-                fetch("http://127.0.0.1:5000/bookingStatus", {
-                    method: "POST",
-                    body: JSON.stringify({
-                        name: name,
-                        email: email,
-                        phone: phone,
-                        time: time,
-                        date:date
-                    }), headers: {
-                        "Content-type": "application/json;charset=UTF-8"
-                    }
-    
-                }).then(response =>
-                    response.json()).then(json => {
-                        if (json.status == true) {
-                            // location.href= "login.html";
-                            alert(json.message)
-    
-                        } else {
-                            alert(json.message)
-                        }
-    
-                    })
-            }
-        </script>
+        </script> -->
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        function makeGetRequest() {
+            var room_url = localStorage.getItem("roomURL")
+            var room_name = localStorage.getItem("roomName")
+            var roomId = localStorage.getItem("roomId");
+            var userId = localStorage.getItem("userId");
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var phone = document.getElementById('phone').value;
+            var time = document.getElementById('time').value;
+            var date = document.getElementById('date').value;
+            // console.log(username, password,email,phone)
+            fetch("http://127.0.0.1:5000/bookingStatus", {
+                method: "POST",
+                body: JSON.stringify({
+                    name: name,
+                    email: email,
+                    phone: phone,
+                    time: time,
+                    date: date,
+                    room_id: roomId,
+                    user_id: userId,
+                    room_name: room_name,
+                    room_url: room_url,
+                }), headers: {
+                    "Content-type": "application/json;charset=UTF-8"
+                }
 
-<style>
-    body{
-        overflow: hidden;
-    }
-</style>
+            }).then(response =>
+                response.json()).then(json => {
+                    if (json.status == true) {
+                        swal({
+                            title: "Good job!",
+                            text: json.message,
+                            icon: "success",
+                            button: "OK",
+                        }).then((value) => {
+                            // location.href = "select.html"
+                            // localStorage.setItem("userDetails", JSON.stringify([username, password]));
+                            // localStorage.setItem('userId', json.user_id)
+                        })
+
+                        // location.href = "select.html";
+                        // document.getElementById("formReset").reset()
+
+                    } else {
+                        swal({
+                            title: "NOT GOOD job!",
+                            text: json.message,
+                            icon: "error",
+                            button: "OK",
+                        });
+                    }
+
+
+                })
+
+            document.getElementById("formReset").reset();
+        }
+
+        function logout() {
+            swal({
+                title: "Are you sure?",
+                text: "Are you sure you want to logout!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        swal("Logout Successfully!", {
+                            icon: "success",
+                        }).then((v) => {
+                            localStorage.clear();
+                            location.href = "homepage.html"
+                        });
+                    } else {
+                        swal("Cancelled");
+                    }
+                    // localStorage.clear();
+                    // location.href = "homepage.html"
+                })
+        }
+    </script>
+
+    <style>
+        body {
+            overflow: hidden;
+        }
+    </style>
 </body>
 
 </html>

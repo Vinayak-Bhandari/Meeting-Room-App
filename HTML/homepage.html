@@ -1,46 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="assets/style2.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/swiper@7.0.0/swiper-bundle.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <title>Booking website</title>
 </head>
+
 <body>
     <header class="header">
         <div id="menu-btn" class="fas fa-bars"></div>
-        <i class="logo"> <img src="images/logo3.png" width="10%" height="7%" ></i> 
+        <i class="logo"> <img src="images/logo3.png" width="10%" height="7%"></i>
         <nav class="navbar">
-        <b>
-            <a href="#home">Home</a>
-            <a href="#aboutus">About</a>
-            <a href="#features">Features</a>
-        </b>
+            <b>
+                <a href="#home">Home</a>
+                <a href="#aboutus">About</a>
+                <a href="#features">Features</a>
+            </b>
         </nav>
-        <a href="#register" class="btn">Register</a>
+        <button onclick="renderLogin()" class="btn">Login</button>
+        <button onclick="renderRegister()" class="btn">Register</button>
     </header>
+
     <section class="home" id="home">
         <div class="row">
             <div class="content">
                 <h3 style="color:#d8cbc4 ;">_ </h3>
-                <b><h3>Meeting room booking application</h3></b> 
-                <h1>With only a couple of clicks and some filters, 
-                    employees can book a conference room that fits their needs.</h1>               
+                <b>
+                    <h3>Meeting room booking application</h3>
+                </b>
+                <h1>With only a couple of clicks and some filters,
+                    employees can book a conference room that fits their needs.</h1>
                 <b><a href="#" class="btn" onclick="submmit()">Explore</a></b>
             </div>
             <!-- f0r---------------------slider------------------- -->
-            <section class="product"> 
+            <section class="product">
                 <h2 class="product-category"></h2>
                 <button class="pre-btn"></button>
                 <button class="nxt-btn"></button>
                 <div class="product-container">
                     <div class="product-card">
                         <div class="product-image">
-                           <img src="images/img1.jpg" class="product-thumb" alt="">
+                            <img src="images/img1.jpg" class="product-thumb" alt="">
                         </div>
                     </div>
                     <div class="product-card">
@@ -52,125 +58,134 @@
                         <div class="product-image">
                             <img src="images/img5.jpg" class="product-thumb" alt="">
                         </div>
-        
+
                     </div>
                     <div class="product-card">
                         <div class="product-image">
-                            <img src="images/img9.jpg" class="product-thumb" alt="">     
+                            <img src="images/img9.jpg" class="product-thumb" alt="">
                         </div>
-                    
-                        
-                    
-                    </div>
-                    
-                    
                     </div>
                 </div>
-            </section>
-            
-           
-            
+        </div>
+    </section>
+
+
+
     </section>
     <section class="about" id="about">
         <h1 class="heading" id="aboutus">about us<span></span></h1>
-    <div class="row">
-        <div class="image">
-            <img src="images\myimage2.jpg" alt="">
+        <div class="row">
+            <div class="image">
+                <img src="images\myimage2.jpg" alt="">
+            </div>
+            <div class="content">
+                <b>
+                    <h3 class="title">commitment for excellence </h3>
+                </b>
+                <b>
+                    <p>Meeting room is a simple concept of full stack webapplication. In our real life we face a lot of
+                        problems when we meet someone or arrang an meeting and find a suitable place. That's why we
+                        planned to make an app where any we planned to make an app where any user can find a meeting
+                        room and book them easily.
+                    </p>
+                </b>
+            </div>
         </div>
-    <div class="content">
-       <b><h3 class="title">commitment for excellence </h3> </b>
-       <b><p>Meeting room is a simple concept of full stack webapplication. In our real life we face a lot of 
-        problems when we meet someone or arrang an meeting and find a suitable place. That's why we 
-        planned to make an app where any we planned to make an app where any user can find a meeting 
-        room and book them easily.
-        </p></b>
-    </div>    
-    </div>
     </section>
-    <section class="about" id="about" >
-        <h1 class="heading" id="features" >features <span></span></h1>
-    <div class="row">
-        <!-- <div class="image">
+
+    <section class="about" id="about">
+        <h1 class="heading" id="features">features <span></span></h1>
+        <div class="row">
+            <!-- <div class="image">
             <img src="images\myimage2.jpg" alt="">
         </div> -->
-    <div class="content">
-       <h3 class="title"></h3> 
-       <!-- <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam, vero iste odio reiciendis quisquam error ullam sint temporibus enim nobis porro nostrum excepturi nemo autem mollitia accusamus, nulla nisi quasi.</p> -->
-       <div class="icons-container">
-        <div class="icons">
-            <img src="images\myimg6.png" alt="">
-            <h3>Meeting cancellation or extension</h3>
+            <div class="content">
+                <h3 class="title"></h3>
+                <!-- <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquam, vero iste odio reiciendis quisquam error ullam sint temporibus enim nobis porro nostrum excepturi nemo autem mollitia accusamus, nulla nisi quasi.</p> -->
+                <div class="icons-container">
+                    <div class="icons">
+                        <img src="images\myimg6.png" alt="">
+                        <h3>Meeting cancellation or extension</h3>
+                    </div>
+                    <div class="icons">
+                        <img src="images\myimg3.png" alt="">
+                        <h3>Contactless booking</h3>
+                    </div>
+                    <div class="icons">
+                        <img src="images\myimg5.png" alt="">
+                        <h3>Real-time data sharing</h3>
+                    </div>
+                    <div class="icons">
+                        <img src="images\myimage6 - Copy.webp" alt="">
+                        <h3>Automated communication</h3>
+                    </div>
+
+                </div>
+            </div>
         </div>
-        <div class="icons">
-            <img src="images\myimg3.png" alt="">
-            <h3>Contactless booking</h3>
-        </div>
-        <div class="icons">
-            <img src="images\myimg5.png" alt="">
-            <h3>Real-time data sharing</h3>
-        </div>
-        <div class="icons">
-            <img src="images\myimage6 - Copy.webp" alt="">
-            <h3>Automated communication</h3>
-        </div>
-        
-       </div>
-    </div>    
-    </div>
     </section>
-    <section class="book" id="book">
-        <h1 class="heading" id="register" >Register</h1>
+
+    <!-- <section class="book" id="book">
+        <h1 class="heading" id="register">Register</h1>
         <form action="" name="reg_form" onsubmit="return validate()">
             <div class="icon">
-            <input type="text" placeholder=" NAME" name="name" class="box" required>
-            <i class="fas fa-user"></i>
+                <input type="text" placeholder=" NAME" name="name" class="box" required>
+                <i class="fas fa-user"></i>
             </div>
             <div class="icon">
-            <input type="email" placeholder="EMAIL" name="email" class="box" required>
-            <i class="fas fa-envelope"></i>
+                <input type="email" placeholder="EMAIL" name="email" class="box" required>
+                <i class="fas fa-envelope"></i>
             </div>
             <div class="icon">
-            <input type="tel" placeholder="NUMBER" name="number" class="box" required>
-            <i class="fa-solid fa-phone"></i>
+                <input type="tel" placeholder="NUMBER" name="number" class="box" required>
+                <i class="fa-solid fa-phone"></i>
             </div>
             <div class="icon">
-            <input type="password" placeholder="PASSWORD" name="password" class="box" required>
-            <i class="fas fa-lock"></i>
+                <input type="password" placeholder="PASSWORD" name="password" class="box" required>
+                <i class="fas fa-lock"></i>
             </div>
-            <!-- <input type="SUBMIT" placeholder="SUBMIT" class="btn"> -->
+            <input type="SUBMIT" placeholder="SUBMIT" class="btn">
             <button class="btn solid" value="SignUp">Submit</button>
-            <!-- <button class="btn solid" value="SignUp"><a class="link_btn" href="login.html">Submit</a></button> -->
-             <span style="color: #;" >Already have a account<a href="login.html">Login</a></span>
-            </form>
-    </section>
-   
+            <button class="btn solid" value="SignUp"><a class="link_btn" href="login.html">Submit</a></button>
+            <span >Already have a account<a href="login.html">Login</a></span>
+        </form>
+    </section> -->
 
 
-    
-<script>
-    document.querySelectorAll('.image-slider img'). forEach(image =>{
-        images.onclick= () =>{
-            var src =images.getAttribute('src');
-            document.querySelector('.main-home-image').src=src;
-        };
-    })
-   const productContainers = [...document.querySelectorAll('.product-container')];
-const nxtBtn = [...document.querySelectorAll('.nxt-btn')];
-const preBtn = [...document.querySelectorAll('.pre-btn')];
 
-productContainers.forEach((item, i) => {
-    let containerDimensions = item.getBoundingClientRect();
-    let containerWidth = containerDimensions.width;
 
-    nxtBtn[i].addEventListener('click', () => {
-        item.scrollLeft += containerWidth;
-    })
+    <script>
+        document.querySelectorAll('.image-slider img').forEach(image => {
+            images.onclick = () => {
+                var src = images.getAttribute('src');
+                document.querySelector('.main-home-image').src = src;
+            };
+        })
+        const productContainers = [...document.querySelectorAll('.product-container')];
+        const nxtBtn = [...document.querySelectorAll('.nxt-btn')];
+        const preBtn = [...document.querySelectorAll('.pre-btn')];
 
-    preBtn[i].addEventListener('click', () => {
-        item.scrollLeft -= containerWidth;
-    })
-}) 
+        productContainers.forEach((item, i) => {
+            let containerDimensions = item.getBoundingClientRect();
+            let containerWidth = containerDimensions.width;
 
-</script>
+            nxtBtn[i].addEventListener('click', () => {
+                item.scrollLeft += containerWidth;
+            })
+
+            preBtn[i].addEventListener('click', () => {
+                item.scrollLeft -= containerWidth;
+            })
+        })
+
+        function renderLogin() {
+            location.href = "login.html"
+        }
+
+        function renderRegister() {
+            location.href = "register.html"
+        }
+    </script>
 </body>
+
 </html>
