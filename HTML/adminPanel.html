@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="assets/adminPanel.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css?family=Bentham|Playfair+Display|Raleway:400,500|Suranna|Trocchi"
+        rel="stylesheet">
+    <!-- <link rel="stylesheet" href="assets/capacity1.css"> -->
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <title>Admin Panel</title>
+</head>
+
+<body>
+    <script>
+        var haveaccess = localStorage.getItem('userDetails');
+        if (haveaccess) {
+
+        } else {
+            location.href = 'login.html'
+        }
+    </script>
+
+    <div class="sidebar">
+        <div class="logo_content">
+        </div>
+        <ul class="nav_list">
+            <div class="logo">
+                <i class='bx bx-menu' id="btn" style="cursor: pointer;margin-left: 0px;"></i>
+            </div>
+
+            <img src="images/logo3.png" width="40px" style="margin-left: 9px;">
+            <!-- <li>
+            <a href="book.html">
+              <i class='bx bxs-spreadsheet'></i>
+              <span class="links_name">Booking</span>
+            </a>
+            <span class="tooltip" style="text-align: center;">Booking Rooms</span>
+          </li> -->
+            <!-- <li>
+            <a href="order.html">
+              <i class='bx bxs-coffee-alt'></i>
+              <span class="links_name">Order </span>
+            </a>
+            <span class="tooltip">Order Refreshments</span>
+          </li> -->
+            <!-- <li>
+            <a href="#">
+              <i class='bx bxs-user'></i>
+              <span class="links_name">User</span>
+            </a>
+            <span class="tooltop">User Profile</span>
+          </li> -->
+
+            <li onclick="logout()" style="cursor: pointer;">
+                <a style="margin-top: 290px;">
+                    <i class='bx bx-log-out'></i>
+                    <span class="links_name">Log out</span>
+                </a>
+                <span class="tooltop">Log Out</span>
+            </li>
+        </ul>
+        <!-- <ul>
+          <li onclick="logout()" style="cursor: pointer;">
+            <a>
+              <i class='bx bx-log-out'></i>
+              <span class="links_name">Log out</span>
+            </a>
+            <span class="tooltop">Log Out</span>
+          </li>
+        </ul> -->
+
+        <div class="container">
+            <!-- <i class="fa fa-spinner fa-5x" class="spinner" id="spinner"></i> -->
+
+            <div class="box" onclick="alreadybookedRooms()" style="cursor: pointer;">
+                <div class="imgBx">
+                    <img src="images\booked.jpg" alt="Bruchetta">
+                </div>
+                <div class="content">
+                    <div style="outline: none;">
+                        <!-- <a href="capacity1.html" style="outline: none;"> -->
+                        <a style="outline: none;">
+                            <h2 style="outline: none;">Booked room Details</h2>
+                            <!-- <p>For Admin</p> -->
+                        </a>
+                    </div>
+                    <!-- <a href="choose.html">hi</a> -->
+                </div>
+            </div>
+
+            <div class="box" onclick="navigatetomediumRooms()" style="cursor: pointer;">
+                <div class="imgBx">
+                    <img src="images\available1.jpeg">
+                </div>
+                <div class="content">
+                    <div style="outline: none;">
+                        <a style="outline: none;">
+                            <h2 style="outline:none;">Available room Details</h2>
+                            <!-- <p>capacity 4
+                            </p> -->
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="box" onclick="adminBook()" style="cursor: pointer;">
+                <div class="imgBx">
+                    <img src="images\book.png">
+                </div>
+                <div class="content">
+                    <div style="outline: none;">
+                        <a style="outline: none;">
+                            <h2 style="outline:none;">Admin Booking</h2>
+                
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let btn = document.querySelector("#btn");
+        let sidebar = document.querySelector(".sidebar");
+
+        btn.onclick = function () {
+            sidebar.classList.toggle("active");
+
+        }
+
+        function alreadybookedRooms(){
+            location.href="userProfile.html"
+        }
+        function adminBook(){
+            location.href="select.html"
+        }
+
+        function logout() {
+      swal({
+        title: "Are you sure?",
+        text: "Are you sure you want to logout!",
+        icon: "warning",
+        buttons: true,
+        dangerMode: true,
+      })
+        .then((willDelete) => {
+          if (willDelete) {
+            swal("Logout Successfully!", {
+              icon: "success",
+            }).then((v) => {
+              localStorage.clear();
+              location.href = "homepage.html"
+            });
+          } else {
+            swal("Cancelled");
+          }
+          // localStorage.clear();
+          // location.href = "homepage.html"
+        })
+    }
+
+
+    </script>
+</body>
+
+</html>
