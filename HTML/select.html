@@ -47,13 +47,13 @@
         </a>
         <span class="tooltip">Order Refreshments</span>
       </li> -->
-      <!-- <li>
-        <a href="#">
+      <li onclick="gotoyourBookings()" style="cursor: pointer;">
+        <a >
           <i class='bx bxs-user'></i>
           <span class="links_name">User</span>
         </a>
-        <span class="tooltop">User Profile</span>
-      </li> -->
+        <span class="tooltop">Your Bookings</span>
+      </li>
        
       <li onclick="logout()" style="cursor: pointer;">
         <a style="margin-top: 290px;">
@@ -162,6 +162,11 @@
           // location.href = "homepage.html"
         })
     }
+
+    function gotoyourBookings(){
+
+location.href="yourBooking.html";
+}
 
 
   </script>

@@ -16,6 +16,7 @@ CORS(app)
 
 conn = psycopg2.connect(dbname="postgres", user="postgres",password="123456" , host="127.0.0.1")
 print('Connected Successfully!!')
+
 @app.route('/login',methods=["GET","POST"])
 def login():
     cursor = conn.cursor()
@@ -211,8 +212,8 @@ def meetingRoom():
         return jsonify({'message': 'Bad Request! , Please check your request method', 'status': False})
     
     
-@app.route('/perticularProduct',methods=['GET','POST'])
-def product():
+@app.route('/perticularRoom',methods=['GET','POST'])
+def perticularRoom():
         cursor = conn.cursor()
         req = request.get_json()
         room_id = req['room_id']
@@ -248,10 +249,65 @@ def Booked():
                                        "room_name":s[4],
                                        "room_url":s[5]
                                        })
-        return {"bookedData":output}
+        return {"bookedData":output,'status':True}
     
     
     
+@app.route('/checkifbooked',methods=['GET','POST'])
+def checkifbooked():
+        cursor = conn.cursor()
+        req = request.get_json()
+        room_id = req['room_id']
+        
+        
+        query=''' SELECT 1 FROM public."bookingStatus"  where room_id='{}' '''.format(room_id);
+        cursor.execute(query)
+        data=cursor.fetchall()
+        
+        try: 
+            
+            if (data[0][0]):
+                resp = jsonify(
+                {'message': 'Room Already booked,Choose another room', 'status': False})
+                resp.status_code = 200
+                return resp
+        except:
+                resp = jsonify(
+                {'message': 'Book this room for the Meeting!!', 'status': True})
+                resp.status_code = 200
+                return resp
+            
+           
+@app.route('/yourBookings',methods=['GET','POST'])
+def yourBookings():
+        cursor = conn.cursor()
+        req = request.get_json()
+        user_id = req['user_id']
+    
+        cursor = conn.cursor()
+        query='''SELECT * FROM public."bookingStatus" where user_id='{}' '''.format(user_id);
+        
+        cursor.execute(query)
+        data=cursor.fetchall()
+        
+        if len(data)>=1:
+            output=[]
+            for s in data:
+                output.append({"room_id": s[5],
+                                           "room_name": s[7],
+                                           "name": s[0],
+                                           "room_url": s[8],
+                                           "email":s[1],
+                                           "phone":s[2],
+                                           "time": s[3].strftime("%H:%M:%S"),
+                                           "date": s[4].strftime("%d-%m-%Y"),
+                                           "user_id":s[6]
+                                           })
+            return{"yourData":output}        
+        else:
+            return{"message":"Bookings are not Found for this user!"}
+        
+            
     
 if __name__ == '__main__':
    app.run()

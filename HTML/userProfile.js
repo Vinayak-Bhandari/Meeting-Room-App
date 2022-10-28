@@ -18,7 +18,11 @@ function gotouserProfile() {
             response.json())
         .then(json => {
             bookedDatas = json.bookedData;
+            console.log(bookedDatas)
             // console.log(roomDatas)
+            if(bookedDatas == ''){
+                swal("Not-Found!", "Rooms are not booked yet!", "warning");
+            }
             document.getElementById("main").innerHTML = `
             ${bookedDatas.map(roomTemplate).join("")}           
 `;

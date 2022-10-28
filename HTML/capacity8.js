@@ -67,7 +67,7 @@ function navigatetoperticularRooms(room_id) {
 function roomDetails() {
     let params = (new URL(location.href)).searchParams;
     
-    fetch("http://127.0.0.1:5000/perticularProduct", {
+    fetch("http://127.0.0.1:5000/perticularRoom", {
         // Adding method type
         method: "POST",
         // Adding body or contents to send
