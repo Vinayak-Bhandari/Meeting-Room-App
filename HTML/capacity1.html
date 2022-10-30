@@ -1,102 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="assets/capacity1.css">
-    <link href="https://fonts.googleapis.com/css?family=Bentham|Playfair+Display|Raleway:400,500|Suranna|Trocchi" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Bentham|Playfair+Display|Raleway:400,500|Suranna|Trocchi" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Bentham|Playfair+Display|Raleway:400,500|Suranna|Trocchi"
+        rel="stylesheet">
 </head>
+
 <body>
-    <div class="separate">
-        <div class="container">
-        <div class="wrapper">
-            <div class="menu-item">
-    <div class="product-img">
-    <img src="images\single G.jpg" height="250" width="327">
-    </div>
-<div class="product-info ">
-        <div class="product-text">
-            <h1>Aman Gupta</h1>
-            <h2>by Planzo</h2>
-            <p>Room provided for singular events and it is located in ground floor.</p>
-                    
-        
-        </div>
-        <div class="product-price-btn">
-            <button>
-            <a href="room1.html" type="button">show</a>
-            </button>
-        </div>
-    </div>
-    </div>
-    </div>
-    <div class="menu-item">
-    <div class="wrapper1">
-        <div class="product-img">
-        <img src="images\single O.jpeg" height="250" width="327">
-        </div>
-    <div class="product-info ">
-            <div class="product-text">
-                <h1>Vijay Sharma</h1>
-                <h2>by Planzo</h2>
-                <p>Room provided for singular events and it is located in ground floor.</p>
-            
-            </div>
-            <div class="product-price-btn">
-                <button>
-                    <a href="room2.html" type="button">show</a>
-                    </button>
-            </div>
-        </div>
-        </div>
-        </div>
-        <div class="wrapper">
-            <div class="menu-item">
-    <div class="product-img">
-    <img src="images\single B.jpg" height="250" width="327">
-    </div>
-<div class="product-info ">
-        <div class="product-text">
-            <h1>Peyush Bansal</h1>
-            <h2>by Planzo</h2>
-            <p>Room provided for singular events and it is located in ground floor.</p>
-                    
-        
-        </div>
-        <div class="product-price-btn">
-            <button>
-                <a href="room3.html" type="button">show</a>
-                </button>
-        </div>
-    </div>
-    </div>
-    </div>
-    <div class="menu-item">
-    <div class="wrapper1">
-        <div class="product-img">
-        <img src="images\single Y.jpg" height="250" width="327">
-        </div>
-    <div class="product-info ">
-            <div class="product-text">
-                <h1>Bjyu Raveendran</h1>
-                <h2>by Planzo</h2>
-                <p>Room provided for singular events and it is located in ground floor.</p>
-                        
-            
-            </div>
-            <div class="product-price-btn">
-                <button>
-                    <a href="room4.html" type="button">show</a>
-                    </button>
-            </div>
-        </div>
-        </div>
-        </div>
-       
-    </div>
-</div>
+
+    <script>
+        var haveaccess = localStorage.getItem('userDetails');
+        if (haveaccess) {
+
+        } else {
+            location.href = 'login.html'
+        }
+    </script>
+
+<header class="header">
+        <img src="images/logo3.png" width="3%" height="3%" > 
+    <h2 style="margin-right: 30%;">BOOK SMALL ROOMS FOR MEETING</h2>
+    <!-- <img src="images/Logout11.png" width="4%" height="2%" onclick="logout()" style="cursor: pointer;"
+        title="Click to Logout"> -->
+</header>
+
+    <div id="main"></div>
+    <script src="capacity1.js"> </script>
 </body>
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script>
+    window.onload = function () {
+        gotosmallRooms()
+    }
+</script>
+
 </html>

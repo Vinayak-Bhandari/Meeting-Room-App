@@ -8,28 +8,26 @@
     <link rel="stylesheet" href="assets/1.css">
     <link href="https://fonts.googleapis.com/css?family=Bentham|Playfair+Display|Raleway:400,500|Suranna|Trocchi" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Bentham|Playfair+Display|Raleway:400,500|Suranna|Trocchi" rel="stylesheet">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body>
-    <div class="section">
-       
-        
-        <img src="images/single B.jpg" >
-        <div class="text">
-            <h3>Peush Bansal </h3>
-            <p>This meeting room consist the space where only 1 person can occupy, the room is of sky blue color and is in the ground floor</p>
-               <h3>Availabilities in Room<h3>
-                <ul class="list-group">
-                    <li class="list-group-item">Chair</li>
-                    <li class="list-group-item">Switch board</li>   
-                  </ul>
-                  
-            </p>
-        
-            <a href="book.html" class="button">Book</a>
-         
-            <a href="https://calendar.google.com/calendar/u/0/r?tab=rc" class="button" target="_blank">Calender</a>
-        </div>
-        </div>
+
+    <script>
+        var haveaccess = localStorage.getItem('userDetails');
+        if (haveaccess) {
+
+        } else {
+            location.href = 'login.html'
+        }
+    </script>
+    <div id="roomMain"></div>
+    <script src="capacity8.js"> </script>
 </body>
+
+<script>
+    window.onload = function () {
+        roomDetails()
+    }
+</script>
 </html>

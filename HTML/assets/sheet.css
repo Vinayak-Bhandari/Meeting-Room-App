@@ -118,11 +118,12 @@
   z-index: 1;
 }
 .sidebar{
-  width: 78px;
+  width: 61px;
   
 }
 .sidebar.active{
-  width: 300px;
+  width: 160px;
+  
 }
 .sidebar .logo_content .logo{
   color: #765341;
@@ -149,7 +150,7 @@
   left: 50%;
   top:6px;
   font-size:20px;
-  height:30px;
+  height:320px;
   width: 100px;
   text-align:center;
   line-height:30px;
@@ -172,8 +173,9 @@
   width: 100%;
   margin: 0 5px;
   list-style: none;
-  line-height: 110px;
+  line-height: 60px;
   border-radius: 12px;
+  font-size: smaller;
 }
 .sidebar ul li .tooltip{
   position:absolute;
@@ -200,13 +202,13 @@
 }
 .tooltop{
   position:absolute;
-  left: 152px;
-  top:70%;
+  left: 71px;
+  top:60%;
   transform: translateY(-50%);
   border-radius:6px;
   height: 35px;
-  width: 145px;
-  background: #fff;
+  width: 120px;
+  /* background: #fff; */
   line-height: 35px;
   text-align: center;
  box-shadow: 0 5px 10px rgba(167, 32, 32, 0.2);
@@ -216,6 +218,7 @@
    opacity: 0; 
   pointer-events: none;
   display: block;
+  margin-top: 127px;
 }
 .sidebar ul li:hover .tooltop{
   transition:all 0.5s ease;
@@ -250,6 +253,7 @@
   align-items: center;
   text-decoration: none;
   transition: all 0.4s ease;
+  margin-top: 20px;
 }
 
 i{
@@ -260,7 +264,7 @@ i{
   color: #fff;
   background: #765341;
   border-radius: 12px;
-
+  
 }
 .sidebar ul li a i{
   height:50px;

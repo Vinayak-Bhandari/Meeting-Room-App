@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/userProfile.css">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <!-- <link rel="stylesheet" href="assets/style2.css"> -->
+    <title>User Profile</title>
+</head>
+
+<body>
+    <script>
+        var haveaccess = localStorage.getItem('userDetails');
+        if (haveaccess) {
+
+        } else {
+            location.href = 'login.html'
+        }
+    </script>
+
+    <header class="header">
+        <!--    <div id="menu-btn" class="fas fa-bars"></div> -->
+        <!-- <i class="logo">  -->
+            <img src="images/logo3.png" width="3%" height="3%" > 
+        <!-- </i> -->
+        <h2 style="margin-right: 37%;">BOOKED ROOM DETAILS</h2>
+        <!-- <img src="images/Logout11.png" width="4%" height="2%" onclick="logout()" style="cursor: pointer;"
+            title="Click to Logout"> -->
+            <!-- <i class='bx bx-log-out'></i> -->
+    </header>
+
+    <div id="main">
+    </div>
+    <script src="userProfile.js"> </script>
+</body>
+
+
+<script>
+    window.onload = function () {
+        gotouserProfile()
+    }
+
+    function logout() {
+            swal({
+                title: "Are you sure?",
+                text: "Are you sure you want to logout!",
+                icon: "warning",
+                buttons: true,
+                dangerMode: true,
+            })
+                .then((willDelete) => {
+                    if (willDelete) {
+                        swal("Logout Successfully!", {
+                            icon: "success",
+                        }).then((v) => {
+                            localStorage.clear();
+                            location.href = "homepage.html"
+                        });
+                    } else {
+                        swal("Cancelled");
+                    }
+                    // localStorage.clear();
+                    // location.href = "homepage.html"
+                })
+        }
+    </script>
+</script>
+
+</html>

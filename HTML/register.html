@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
+  <title>Register</title>
+</head>
+
+<body style="overflow: hidden;">
+  <img src="images\logo3-removebg-preview.png" width="3%" height="3%" onclick="gotoHome()" style="cursor: pointer;"
+    title="Go to Home Page">
+  <!-- <i class="title">Planzo</i> -->
+  <div class="register-page">
+    <div class="form form1">
+      <div class="login">
+        <div class="login-header">
+          <h3 style="margin-bottom: 2px;">Register</h3>
+          <p>Please enter your credentials to Register.</p>
+        </div>
+      </div>
+      <form class="login-form" id="formReset">
+        <div class="icon">
+          <input type="text" placeholder=" username" name="name" class="box" id="username" required>
+        </div>
+        <div class="icon">
+          <input type="password" placeholder="password" name="password" id="password" class="box" required><i class="far fa-eye" id="togglePassword"
+          style="margin-left: -22px; cursor: pointer;"></i>
+        </div>
+        <div class="icon">
+          <input type="tel" placeholder="phone" name="number" id="phone" class="box" required>
+        </div>
+        <div class="icon">
+          <input type="email" placeholder="email" name="email" class="box" id="email" required>
+        </div>
+      </form>
+      <button class="btn solid" onclick="makeGetRequest()">Submit</button>
+      <h5 style="color:#664229;margin-top: auto;">Already have an account?<a
+          style="cursor: pointer;color: blue;font-size: medium;" onclick="gotoLogin()">Login</a></h5>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+  <script>
+    function makeGetRequest() {
+      var username = document.getElementById('username').value;
+      var email = document.getElementById('email').value;
+      var phone = document.getElementById('phone').value;
+      var password = document.getElementById('password').value;
+      console.log(username, password)
+      fetch("http://127.0.0.1:5000/register", {
+        method: "POST",
+        body: JSON.stringify({
+          username: username,
+          password: password,
+          phone: phone,
+          email: email,
+        }), headers: {
+          "Content-type": "application/json;charset=UTF-8"
+        }
+
+      }).then(response =>
+        response.json()).then(json => {
+          console.log(json)
+          if (json.status == true) {
+            swal({
+              title: "Good job!",
+              text: json.message,
+              icon: "success",
+              button: "OK",
+            })
+          } else {
+            swal({
+              title: "NOT GOOD job!",
+              text: json.message,
+              icon: "error",
+              button: "OK",
+            });
+          }
+
+        })
+      document.getElementById("formReset").reset();
+    }
+
+    function gotoLogin() {
+      location.href = "login.html"
+    }
+
+    function gotoHome() {
+      location.href = "homepage.html"
+    }
+
+    const togglePassword = document.querySelector('#togglePassword');
+    const password = document.querySelector('#password');
+
+    togglePassword.addEventListener('click', function (e) {
+      // toggle the type attribute
+      const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+      password.setAttribute('type', type);
+      // toggle the eye slash icon
+      this.classList.toggle('fa-eye-slash');
+    });   
+  </script>
+</body>
+
+</html>
