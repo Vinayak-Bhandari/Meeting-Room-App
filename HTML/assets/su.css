@@ -9,6 +9,7 @@
     outline: none;
     color: #5e3b29;
    }
+   
    h1{
     text-align:center;
     color:#5e3b29;
@@ -64,9 +65,10 @@
     outline:none;
     background-image: linear-gradient(45deg,#9c6644, #8b6c5c);
     color:white;
-    cursor:pointer;
+    /* cursor:pointer; */
     border-radius:4px;
     display:block;
+    text-align: center;
   
  }
  .item button{
@@ -117,17 +119,18 @@ body{
   left: 0;
   height: 100%;
   width: 20px;
-  background-color: #fff;
+  background: #fff;
   padding:6px 14px;
   transition: all 0.5 ease;
   z-index: 1;
 }
 .sidebar{
-  width: 78px;
+  width: 74px;
   
 }
 .sidebar.active{
-  width: 300px;
+  width: 160px;
+  
 }
 .sidebar .logo_content .logo{
   color: #765341;
@@ -140,6 +143,7 @@ body{
  
   font-size: 28px;
   margin-right:5px;
+  outline: none;
 }
 
 .logo_content .logo .logo_name{
@@ -153,7 +157,7 @@ body{
   left: 50%;
   top:6px;
   font-size:20px;
-  height:30px;
+  height:320px;
   width: 100px;
   text-align:center;
   line-height:30px;
@@ -176,8 +180,9 @@ body{
   width: 100%;
   margin: 0 5px;
   list-style: none;
-  line-height: 110px;
+  line-height: 60px;
   border-radius: 12px;
+  font-size: smaller;
 }
 .sidebar ul li .tooltip{
   position:absolute;
@@ -187,7 +192,7 @@ body{
   border-radius:6px;
   height: 35px;
   width: 155px;
-  background-color: #fff;
+  background: #fff;
   line-height: 40px;
   text-align: left;
  box-shadow: 0 5px 10px rgba(167, 32, 32, 0.2);
@@ -204,13 +209,13 @@ body{
 }
 .tooltop{
   position:absolute;
-  left: 152px;
-  top:70%;
+  left: 71px;
+  top:60%;
   transform: translateY(-50%);
   border-radius:6px;
   height: 35px;
-  width: 155px;
-  background-color: #fff;
+  width: 120px;
+  /* background: #fff; */
   line-height: 35px;
   text-align: center;
  box-shadow: 0 5px 10px rgba(167, 32, 32, 0.2);
@@ -220,6 +225,7 @@ body{
    opacity: 0; 
   pointer-events: none;
   display: block;
+  margin-top: 127px;
 }
 .sidebar ul li:hover .tooltop{
   transition:all 0.5s ease;
@@ -240,7 +246,7 @@ body{
   border-radius: 12px;
   outline: none;
   border:none;
-  background-color: #fff;
+  background: #fff;
   padding-left: 50px;
   font-size: 18px;
   color: #765341;
@@ -254,6 +260,7 @@ body{
   align-items: center;
   text-decoration: none;
   transition: all 0.4s ease;
+  margin-top: 20px;
 }
 
 i{
@@ -262,9 +269,9 @@ i{
 
 .sidebar ul li a:hover{
   color: #fff;
-  background-color: #765341;
+  background: #765341;
   border-radius: 12px;
-
+  
 }
 .sidebar ul li a i{
   height:50px;
@@ -302,6 +309,7 @@ i{
   
 }
 .home_content{
+  margin-left:80px;
   position: absolute;
   height: 100%;
   width: calc(100%-300px);

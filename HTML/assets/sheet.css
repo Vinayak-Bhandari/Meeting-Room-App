@@ -106,6 +106,7 @@
 .container .box:hover .content p {
   transform: translateY(0px);
 }
+
 .sidebar{
   position: fixed;
   top:0;
