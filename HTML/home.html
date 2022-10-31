@@ -148,12 +148,24 @@
 
             </div>
             <div class="icon">
-                <input type="password" placeholder="Confirm Password" name="password" id="pass" class="box" required><br><br>
+                <input type="password" placeholder="Confirm Password" name="password" id="pass" class="box"
+                    required><br><br>
                 <span><input type="checkbox" onclick="myFunction()">Show Password</span>
             </div>
+            <div class="icon">
+                <p class="size">Already have an account <strong><a href="login.html" class="change">Login</a></strong>
+                </p>
+            </div>
             <!-- <span><input type="checkbox" onclick="myFunction()">Show Password</span> -->
+            <button class="btn solid" onclick="makeGetRequest()" value="SignUp">Submit</button>
+
+        </form>
 
 
+            <div class="icon">
+                <button class="btn solid" onclick="makeGetRequest()" value="SignUp">Submit</button>
+        
+        </div>
             
         </form>
         
@@ -189,7 +201,7 @@
             })
         })
 
-        
+
         // function makeGetRequest(path) {
         //     axios.get(path).then(
         //         (response) => {
@@ -215,7 +227,7 @@
             var password = document.getElementById('pass').value;
             var email = document.getElementById('email').value;
             var phone = document.getElementById('phone').value;
-            console.log(username, password,email,phone)
+            console.log(username, password, email, phone)
             fetch("http://127.0.0.1:5000/register", {
                 method: "POST",
                 body: JSON.stringify({
@@ -230,7 +242,7 @@
             }).then(response =>
                 response.json()).then(json => {
                     if (json.status == true) {
-                        location.href= "login.html";
+                        location.href = "login.html";
                         alert(json.message)
 
                     } else {
@@ -240,18 +252,18 @@
                 })
         }
     </script>
-<script>
-    function myFunction() {
-        var x = document.getElementById("pass");
-        if (x.type === "password") {
-          x.type = "text";
-        } else {
-          x.type = "password";
+    <script>
+        function myFunction() {
+            var x = document.getElementById("pass");
+            if (x.type === "password") {
+                x.type = "text";
+            } else {
+                x.type = "password";
+            }
         }
-      }
     </script>
     <script>
-</script>
+    </script>
 </body>
 
 </html>

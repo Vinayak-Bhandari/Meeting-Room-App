@@ -8,6 +8,11 @@ from flask import Flask,request,jsonify
 from flask_cors import CORS
 import psycopg2
 import psycopg2.extras
+import smtplib
+import  json
+
+# import pandas as pd
+# import json
 import pandas as pd
 import json
 app = Flask(__name__)
@@ -138,6 +143,19 @@ def sellerform():
     phone=req['phone']
     time=req['time']
     date=req['date']
+    
+    
+    message= """Congratulation!Your Reservation for the Meeting Room is confirmed"""
+    
+    try:
+        smtpObj=smtplib.SMTP("smtp.gmail.com",587)
+        smtpObj.starttls()
+        smtpObj.login("planzo951@gmail.com","dmozmoojccrgtksb")
+        smtpObj.sendmail('planzo951@gmail.com',email,message)
+        print("Successfully Sent Email")
+    except Exception:
+        print("Error:unable to send email")  
+
     room_id=req['room_id']
     user_id=req['user_id']
     room_name=req['room_name']
@@ -168,6 +186,12 @@ def sellerform():
             {'message': 'Bad Request! , Please check your request method', 'status': False})
         resp.status_code = 400
         return resp
+       
+
+
+    
+          
+
     
     
 @app.route('/meetingRoom',methods=["GET","POST"])
@@ -310,7 +334,8 @@ def yourBookings():
             
     
 if __name__ == '__main__':
-   app.run()
+    app.run()
+   
    
    
   
