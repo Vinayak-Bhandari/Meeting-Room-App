@@ -22,7 +22,7 @@ fetch("http://127.0.0.1:5000/yourBookings", {
         // localStorage.setItem("roomURL",perticularroomData[0].room_url)
         // localStorage.setItem("roomName",perticularroomData[0].room_name)
         // console.log(perticularroomData)
-        if(yourBookings == undefined){
+        if(json.status == false){
             swal("Not-Found!", json.message, "warning");
         }
         document.getElementById("main").innerHTML = `
@@ -57,8 +57,50 @@ return `
         <p><b>Time:</b> ${room.time}</p>
         <p><b>Date:</b> ${room.date}</p>
 
-        <a class="button" style="cursor:pointer;">Cancel your Booking</a>
+        <a class="button" onclick="cancelBooking()" style="cursor:pointer;">Cancel Booking</a>
     </div>
 </div> 
 `;
+}
+
+function cancelBooking() {
+    var room_id = localStorage.getItem("roomId");    
+fetch("http://127.0.0.1:5000/cancelBooking", {
+    // Adding method type
+    method: "POST",
+    // Adding body or contents to send
+    body: JSON.stringify({
+        room_id:room_id
+    }),
+    // Adding headers to the request
+    headers: {
+        "Content-type": "application/json; charset=UTF-8"
+    }
+})
+
+    // Converting to JSON
+    .then(response =>
+        response.json())
+    .then(json => {
+        if (json.status == true) {
+            swal({
+              title: "Good job!",
+              text: json.message,
+              icon: "success",
+              button: "OK",
+            })
+            // window.location.reload()
+
+          } else {
+            // swal({
+            //   title: "NOT GOOD job!",
+            //   text: json.message,
+            //   icon: "error",
+            //   button: "OK",
+            // });
+          }
+    },
+    // window.location.reload()
+    );
+
 }

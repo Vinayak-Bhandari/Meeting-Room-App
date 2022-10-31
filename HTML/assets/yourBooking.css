@@ -2,6 +2,7 @@ body {
     margin: 0;
     font-family: 'Bentham', serif;
     font-size: 18px;
+    background-color: #f2eee3;
 }
 
 .selection {
@@ -16,6 +17,7 @@ body {
     padding-right: 5%;
     padding-bottom: 5%;
     text-decoration: none;
+    border: 1px solid black;
 }
 
 .selection img {

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <style>
+        img {
+            padding: 10px;
+            margin-left: 30px;
+            text-align: center;
+        }
+
+        .header {
+            position: fixed;
+            top: 0%;
+            left: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 1000;
+            background: #fff;
+            box-shadow: 0 .8rem 3rem rgba(0, 0, 0, .1);
+            padding: 0.4% 2%;
+        }
+
+        .button {
+            border: none;
+            color: white;
+            padding: 12px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 15px;
+            margin: 4px 2px;
+            cursor: pointer;
+            float: right;
+        }
+
+        .button1 {
+            background-color: #4CAF50;
+        }
+
+        /* Green */
+        .button2 {
+            background-color: #008CBA;
+        }
+
+        /* Blue */
+    </style>
+</head>
+
+<body style="background-color:#f5eedb ;">
+    <header class="header">
+        <img src="images/logo3.png" width="3%" height="3%">
+        <h2 style="margin-right:32%;">Explore more about meeting room</h2>
+        <!-- <img src="images/Logout11.png" width="4%" height="2%" onclick="logout()" style="cursor: pointer;"
+        title="Click to Logout"> -->
+    </header>
+    <div style="margin-top:100px;">
+        <img src="images\4con.jpg" alt="" width="20%">
+        <img src="images\8.jpg" alt="" width="20%">
+        <img src="images\10.jpg" alt="" width="20%">
+        <img src="images\12con.jpg" alt="" width="20%">
+
+    </div>
+
+    <ul>
+        <h3>Register</h3>
+        <h3>Login</h3>
+        <h2><u>Types of Rooms are available for booking</u></h2>
+        <li>Small Room</li>
+        <li>Medium Room</li>
+        <li>Large Room</li>
+
+    </ul>
+
+
+    <div style="padding:10px; font-size: large; font-weight: 30px;">
+        <h2><u>Details about Rooms and availabilities: </u></h2>
+        <ul>
+            <li>You can register and than login to book your rooms for the meetings.</li>
+            <li>you have to mention your credentials with meeting time and date.</li>
+            <li>Small rooms has a capacity of 1-2 members and it consist of less availabilities.</li>
+            <li>Medium rooms has a capacity of 4-5 members and Large rooms has capacity of 8-10-12 members.these two has
+                more availabilities.</li>
+            <li>Also you can order refreshment drinks at the meeting time.</li>
+            <li>Once you have booked, you have option to cancel your booking.</li>
+        </ul>
+    </div>
+
+    <div>
+        <button class="button button1" onclick="topFunction()" id="myBtn" title="Go to top">Go to Top  <i class='fa fa-arrow-circle-up' style="font-size:18px"></i></button>
+    </div>
+
+</body>
+
+<script>
+    // Get the button
+    let mybutton = document.getElementById("myBtn");
+
+    // When the user scrolls down 20px from the top of the document, show the button
+    window.onscroll = function () { scrollFunction() };
+
+    function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            mybutton.style.display = "block";
+        } else {
+            mybutton.style.display = "none";
+        }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+
+
+</html>
