@@ -58,6 +58,7 @@ function roomTemplate(room) {
              </div>
         </div>
         
+        
   `;
 }
 

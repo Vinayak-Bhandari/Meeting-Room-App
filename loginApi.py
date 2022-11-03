@@ -8,11 +8,6 @@ from flask import Flask,request,jsonify
 from flask_cors import CORS
 import psycopg2
 import psycopg2.extras
-import smtplib
-import  json
-
-# import pandas as pd
-# import json
 import pandas as pd
 import json
 app = Flask(__name__)
@@ -143,19 +138,6 @@ def sellerform():
     phone=req['phone']
     time=req['time']
     date=req['date']
-    
-    
-    message= """Congratulation!Your Reservation for the Meeting Room is confirmed"""
-    
-    try:
-        smtpObj=smtplib.SMTP("smtp.gmail.com",587)
-        smtpObj.starttls()
-        smtpObj.login("planzo951@gmail.com","dmozmoojccrgtksb")
-        smtpObj.sendmail('planzo951@gmail.com',email,message)
-        print("Successfully Sent Email")
-    except Exception:
-        print("Error:unable to send email")  
-
     room_id=req['room_id']
     user_id=req['user_id']
     room_name=req['room_name']
@@ -186,12 +168,6 @@ def sellerform():
             {'message': 'Bad Request! , Please check your request method', 'status': False})
         resp.status_code = 400
         return resp
-       
-
-
-    
-          
-
     
     
 @app.route('/meetingRoom',methods=["GET","POST"])
@@ -275,8 +251,7 @@ def Booked():
                                        })
         return {"bookedData":output,'status':True}
     
-    
-    
+       
 @app.route('/checkifbooked',methods=['GET','POST'])
 def checkifbooked():
         cursor = conn.cursor()
@@ -327,15 +302,33 @@ def yourBookings():
                                            "date": s[4].strftime("%d-%m-%Y"),
                                            "user_id":s[6]
                                            })
-            return{"yourData":output}        
+            return{"yourData":output,"status":True}        
         else:
-            return{"message":"Bookings are not Found for this user!"}
+            return{"message":"Bookings are not Found for this user!","status":False}
         
+        
+@app.route('/cancelBooking',methods=['GET','POST'])
+def cancelBooking():
+        cursor = conn.cursor()
+        req = request.get_json()
+        room_id = req['room_id']
+        
+        if room_id:
+    
+            cursor = conn.cursor()
+            query='''DELETE FROM public."bookingStatus" where room_id='{}' '''.format(room_id);
+            
+            cursor.execute(query)
+            conn.commit()
+            cursor.close()     
+            return{"message":"Booking Canceled successfully!!","status": True}        
+       
+        else:
+            return{"message":"Room Id not Found!!","status": False} 
             
     
 if __name__ == '__main__':
-    app.run()
-   
+   app.run()
    
    
   

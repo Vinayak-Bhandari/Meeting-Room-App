@@ -14,7 +14,26 @@
 </head>
 
 <body>
+    <style>
+        #boxshadow {
+            border: 3px solid pink;
+            box-shadow: 5px 6px hotpink;
+        }
 
+        .separate {
+            text-align: center;
+            /* color: #5e3b29; */
+            /* padding: 20px; */
+            margin: 0;
+            padding: 0;
+            font-family: 'Bentham', serif;
+            /* box-sizing: border-box; */
+            border: none;
+            outline: none;
+            color: #5e3b29;
+            /* margin-left: 100px; */
+        }
+    </style>
     <body>
         <script>
             var haveaccess = localStorage.getItem('userDetails');
@@ -28,8 +47,6 @@
         <header class="header">
             <img src="images/logo3.png" width="3%" height="3%">
             <h2 style="margin-right: 30%;">BOOK LARGE ROOMS FOR MEETING</h2>
-            <!-- <img src="images/Logout11.png" width="4%" height="2%" onclick="logout()" style="cursor: pointer;"
-    title="Click to Logout"> -->
         </header>
 
         <div id="main"></div>

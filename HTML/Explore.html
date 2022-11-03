@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Explore</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <style>
@@ -24,15 +24,16 @@
             align-items: center;
             justify-content: space-between;
             z-index: 1000;
-            background: #fff;
-            box-shadow: 0 .8rem 3rem rgba(0, 0, 0, .1);
+            background-color: #e5d5af;
             padding: 0.4% 2%;
+            color: #5e3b29;
+            text-align: center;
         }
 
         .button {
             border: none;
             color: white;
-            padding: 12px 25px;
+            padding: 7px 8px;
             text-align: center;
             text-decoration: none;
             display: inline-block;
@@ -40,6 +41,7 @@
             margin: 4px 2px;
             cursor: pointer;
             float: right;
+            border-radius: 10PX;
         }
 
         .button1 {
@@ -58,31 +60,42 @@
 <body style="background-color:#f5eedb ;">
     <header class="header">
         <img src="images/logo3.png" width="3%" height="3%">
-        <h2 style="margin-right:32%;">Explore more about meeting room</h2>
+        <h2 style="margin-right:32%;">EXPLORE MORE ABOUT MEETING ROOM</h2>
         <!-- <img src="images/Logout11.png" width="4%" height="2%" onclick="logout()" style="cursor: pointer;"
         title="Click to Logout"> -->
     </header>
-    <div style="margin-top:100px;">
+    <div style="margin-top:112px;">
         <img src="images\4con.jpg" alt="" width="20%">
         <img src="images\8.jpg" alt="" width="20%">
         <img src="images\10.jpg" alt="" width="20%">
         <img src="images\12con.jpg" alt="" width="20%">
 
     </div>
+    <div style="padding:10px;font-size: large;color: #5e3b29;">
+       
+            <h3>REGISTER</h3>
+            <h3>LOGIN</h3>
+            <h2>TYPES OF ROOMS ARE AVAILABLE</h2>
+        
+    </div>
+    <div style="display:flex;">
+        <div>
+            <ul style="line-height:30px;color: #5e3b29;">
+                <li>Small_Room</li>
+                <li>Medium_Room</li>
+                <li>Large_Room</li>
 
-    <ul>
-        <h3>Register</h3>
-        <h3>Login</h3>
-        <h2><u>Types of Rooms are available for booking</u></h2>
-        <li>Small Room</li>
-        <li>Medium Room</li>
-        <li>Large Room</li>
+            </ul>
+        </div>
+        <div style="margin-left:200px;">
+            <img src="images\Framery-One-Privacy-Pod-Ultra-1.jpg" alt="" width="22%" height="84%" title="Small room">
+            <img src="images\4con.jpg" alt="" width="22%" title="Medium room">
+            <img src="images\8.jpg" alt="" width="22%" title="Large room">
+        </div>
+    </div>
 
-    </ul>
-
-
-    <div style="padding:10px; font-size: large; font-weight: 30px;">
-        <h2><u>Details about Rooms and availabilities: </u></h2>
+    <div style="padding:10px; font-size: large; font-weight: 30px;line-height:30px;color: #5e3b29;">
+        <h2>DETAILS ABOUT ROOMS AND AVALABILITIES</h2>
         <ul>
             <li>You can register and than login to book your rooms for the meetings.</li>
             <li>you have to mention your credentials with meeting time and date.</li>
@@ -95,7 +108,8 @@
     </div>
 
     <div>
-        <button class="button button1" onclick="topFunction()" id="myBtn" title="Go to top">Go to Top  <i class='fa fa-arrow-circle-up' style="font-size:18px"></i></button>
+        <button class="button button1" onclick="topFunction()" id="myBtn" title="Go to top">Go to Top <i
+                class='fa fa-arrow-circle-up' style="font-size:18px"></i></button>
     </div>
 
 </body>
