@@ -18,51 +18,6 @@
             location.href = 'login.html'
         }
     </script>
-    <!-- <div class="sidebar">
-        <div class="logo_content">
-    
-        </div>
-        <ul class="nav_list">
-            <div class="logo">
-                <img src="images/logo3.png" width="50px">
-        
-                <i class='bx bx-menu' id="btn"></i>
-            </div>
-
-           
-            <li>
-                <a href="select.html">
-                    <i class='bx bxs-spreadsheet'></i>
-                    <span class="links_name">Booking</span>
-                </a>
-                <span class="tooltip" style="text-align: center;">Booking Rooms</span>
-            </li>
-            <li>
-                <a href="order.html">
-                    <i class='bx bxs-coffee-alt'></i>
-                    <span class="links_name">Order </span>
-                </a>
-                <span class="tooltip">Order Refreshments</span>
-            </li>
-            <li>
-                <a href="{{url_for('admin')}}">
-                    <i class='bx bxs-user'></i> 
-                    <span class="links_name">User</span>
-                </a>
-                <span class="tooltop">User Profile</span>
-            </li>
-
-        </ul>
-        <div class="profile_content">
-
-            <a href="login.html"><i class='bx bx-log-out tooltip' id="logout"></i>
-                <span class="tooltop">Log out</span></a>
-        </div>
-    </div>
-
-
-
-    </div> -->
     <img src="images\Logout11.png" width="4%" height="3%" onclick="logout()" style="cursor: pointer;"
         title="Click to Logout">
 
@@ -85,7 +40,8 @@
                     <i class="fa fa-envelope email"></i>
                 </div>
                 <div class="icon">
-                    <input type="number" id="phone" placeholder="phone" class="box" pattern="[1-9]{1}[0-9]{9}" maxlength="10">
+                    <input type="number" id="phone" placeholder="phone" class="box" pattern="[1-9]{1}[0-9]{9}"
+                        maxlength="10">
                     <i class="fa fa-phone"></i>
                 </div>
                 <div class="icon">
@@ -103,15 +59,6 @@
         </div>
     </div>
 
-    <!-- <script>
-            let btn = document.querySelector("#btn");
-            let sidebar = document.querySelector(".sidebar");
-
-            btn.onclick = function () {
-                sidebar.classList.toggle("active");
-            }
-
-        </script> -->
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script>
         function makeGetRequest() {
@@ -149,15 +96,7 @@
                             text: json.message,
                             icon: "success",
                             button: "OK",
-                        }).then((value) => {
-                            // location.href = "select.html"
-                            // localStorage.setItem("userDetails", JSON.stringify([username, password]));
-                            // localStorage.setItem('userId', json.user_id)
                         })
-
-                        // location.href = "select.html";
-                        // document.getElementById("formReset").reset()
-
                     } else {
                         swal({
                             title: "NOT GOOD job!",
@@ -192,17 +131,9 @@
                     } else {
                         swal("Cancelled");
                     }
-                    // localStorage.clear();
-                    // location.href = "homepage.html"
                 })
         }
     </script>
-
-    <style>
-        body {
-            overflow: hidden;
-        }
-    </style>
 </body>
 
 </html>

@@ -121,14 +121,15 @@ function perticularroomTemplate(room) {
                 </ul>
                   
             </p>
+            <div>
             <a class="button" onclick="checkifBooked()" style="cursor:pointer;">Book</a>
-
-
-            <a href="https://calendar.google.com/calendar/u/0/r?tab=rc" class="button" target="_blank">Calender</a>
+            <a class="button"  href="order.html" style="cursor:pointer;">Order Refreshment</a>
+            </div>
         </div>
         </div> 
   `;
 }
+{/* <a href="https://calendar.google.com/calendar/u/0/r?tab=rc" class="button" target="_blank">Calender</a> */}
 
 
 //  var test = document.createElement('script');

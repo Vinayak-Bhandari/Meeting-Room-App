@@ -24,7 +24,7 @@ float: left;
 }
 .register-page {
   width: 410px;
-  padding: 3% 0 0;
+  padding: 2% 0 0;
   margin: auto;
 }
 .login-page .form .login{
@@ -38,17 +38,17 @@ margin-bottom: 26px;
   /* z-index: 1; */
   background: #FFFFFF;
   max-width: 360px;
-  margin: 0 auto 100px;
+  /* margin: 0 auto 100px; */
   padding: 45px;
   text-align: center;
-  box-shadow: 0 0 20px 0 rgb(122, 119, 119), 0 5px 5px 0 #616161fb;
+  box-shadow: 0 0 20px 0 rgb(122, 119, 119), 0 2px 2px 0 #616161fb;
   /* padding-top: 2px; */
   padding-bottom: 2px;
   
 }
 .form1{
- padding-top: 2px;
- padding-bottom: 2px;
+ padding-top: 1px;
+ padding-bottom: 15px;
  max-width: 310px;
 }
 
