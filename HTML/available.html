@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/available.css">
+
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var haveaccess = localStorage.getItem('userDetails');
+        if (haveaccess) {
+
+        } else {
+            location.href = 'login.html'
+        }
+    </script>
+
+<header class="header">
+        <img src="images/logo3.png" width="3%" height="3%" > 
+    <h2 style="margin-right: 40%;">AVAILABLE ROOMS</h2>
+    <!-- <img src="images/Logout11.png" width="4%" height="2%" onclick="logout()" style="cursor: pointer;"
+        title="Click to Logout"> -->
+</header>
+
+    <div id="main"></div>
+    <!-- <script src="capacity1.js"> </script> -->
+</body>
+
+<script>
+function availableRooms() {
+    fetch("http://127.0.0.1:5000/avalaibleRooms", {
+        // Adding method type
+        method: "GET",
+        // Adding body or contents to send
+        // body: JSON.stringify({
+            
+        // }),
+        // Adding headers to the request
+        headers: {
+            "Content-type": "application/json; charset=UTF-8"
+        }
+    })
+
+        // Converting to JSON
+        .then(response =>
+            response.json())
+        .then(json => {
+            availableRooms = json.availableRoom;
+            console.log(availableRooms)
+            document.getElementById("main").innerHTML = `
+            ${availableRooms.map(availableroomTemplate).join("")}           
+`;
+        }
+        );
+}
+
+// function navigatetosmallRooms() {
+
+//     location.href = "capacity1.html";
+// }
+
+function availableroomTemplate(room) {
+    console.log(room.room_url)
+    console.log(room)
+    return ` 
+
+    <div class="wrapper">
+
+            <div class="menu-item">
+                  <div class="product-img">
+                      <img src="${room.room_url}" height="250" width="327">
+                  </div>
+                <div class="product-info ">
+                      <div class="product-text">
+                          <h1>${room.room_name}</h1>
+                          <h2>by Planzo</h2>
+                          <h3>Room-Type:${room.room_category}</h3>
+                          <p>${room.room_description}</p>
+                      </div>               
+                      <div class="product-price-btn">
+                      </div>
+                </div>
+             </div>
+        </div>
+        
+        
+  `;
+}
+</script>
+<script>
+    window.onload = function () {
+        availableRooms()
+    }
+</script>
+</html>

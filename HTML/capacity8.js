@@ -116,7 +116,7 @@ function perticularroomTemplate(room) {
             </p>
 
             <a onclick="checkifBooked()" class="button" style="cursor:pointer;">Book</a>
-            <a href="https://calendar.google.com/calendar/u/0/r?tab=rc" class="button" target="_blank">Calender</a>
+            <a class="button"  href="order.html" style="cursor:pointer;">Order Refreshment</a>
         </div>
         </div> 
   `;

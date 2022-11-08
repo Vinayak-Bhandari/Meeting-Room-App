@@ -251,7 +251,8 @@ def Booked():
                                        })
         return {"bookedData":output,'status':True}
     
-       
+    
+    
 @app.route('/checkifbooked',methods=['GET','POST'])
 def checkifbooked():
         cursor = conn.cursor()
@@ -288,9 +289,8 @@ def yourBookings():
         
         cursor.execute(query)
         data=cursor.fetchall()
-        
-        if len(data)>=1:
-            output=[]
+        output=[]
+        if data:
             for s in data:
                 output.append({"room_id": s[5],
                                            "room_name": s[7],
@@ -304,7 +304,7 @@ def yourBookings():
                                            })
             return{"yourData":output,"status":True}        
         else:
-            return{"message":"Bookings are not Found for this user!","status":False}
+            return{"yourData":output,"message":"Bookings are not Found for this user!","status":False}
         
         
 @app.route('/cancelBooking',methods=['GET','POST'])
@@ -320,12 +320,33 @@ def cancelBooking():
             
             cursor.execute(query)
             conn.commit()
-            cursor.close()     
+            cursor.close()
+            
+        
+           
             return{"message":"Booking Canceled successfully!!","status": True}        
        
         else:
             return{"message":"Room Id not Found!!","status": False} 
             
+        
+@app.route('/avalaibleRooms',methods=['GET','POST'])
+def avalaible():
+        cursor = conn.cursor()
+        query=''' select * from public."meetingRoom" where room_id not in ( select room_id from public."bookingStatus") ''';
+        cursor.execute(query)
+        data=cursor.fetchall()
+        output=[]
+        for s in data:
+            output.append({"room_id": s[0],
+                                       "room_name": s[1],
+                                       "room_description": s[2].replace('\n',''),
+                                       "room_url": s[3],
+                                       "inner_description":s[4].replace('\n',''),
+                                       "room_availability":s[5].replace('\n','').split(','),
+                                       "room_category":s[6]
+                                       })
+        return {"availableRoom":output,'status':True}
     
 if __name__ == '__main__':
    app.run()
