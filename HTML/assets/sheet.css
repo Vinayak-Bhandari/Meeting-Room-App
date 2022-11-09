@@ -208,8 +208,9 @@
   transform: translateY(-50%);
   border-radius:6px;
   height: 35px;
-  width: 120px;
+  width: 130px;
   /* background: #fff; */
+  background-color: #70b973;
   line-height: 35px;
   text-align: center;
  box-shadow: 0 5px 10px rgba(167, 32, 32, 0.2);
