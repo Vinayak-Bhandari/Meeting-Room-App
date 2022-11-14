@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="assets/addmeetingRoom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
+    <title>Add Meeting Room</title>
+</head>
+
+<body>
+    <img src="images\logo3-removebg-preview.png" width="3%" height="3%" onclick="gotoHome()" style="cursor: pointer;"
+        title="Go to Home Page">
+    <!-- <i class="title">Planzo</i> -->
+    <div class="register-page">
+        <div class="form form1">
+            <div class="login">
+                <div class="login-header">
+                    <h3 style="margin-bottom: 2px;">Add Meeting Room</h3>
+                    <p>Please enter these details to add new meeting room.</p>
+                </div>
+            </div>
+            <form class="login-form" id="formReset">
+                <div class="icon">
+                    <input type="text" placeholder="Room Name" name="name" class="box" id="username" required>
+                </div>
+                <div class="icon">
+                    <textarea type="password" placeholder="Room Description" name="password" id="password" class="box"
+                        required></textarea>
+                </div>
+                <div class="icon">
+                    <input type="tel" placeholder="Room URL" name="number" id="phone" class="box" required>
+                </div>
+                <div class="icon">
+                    <textarea type="email" placeholder="Inner Description" name="email" class="box" id="email" required></textarea>
+                </div>
+                <div class="icon">
+                    <input type="email" placeholder="Room Availability" name="email" class="box" id="email" required>
+                    <!-- <h5>Ex:TV,Chair</h5> -->
+                </div>
+                <div>
+                    <!-- <h3>Radio Buttons</h3> -->
+                    <p>Select Room Type</p>
+                    <div style="display:flex;color:#664229;">
+                        <input type="radio" name="room" value="small" style="margin-top: 5px;"> Small
+                        <input type="radio" name="room" value="medium" style="margin-top: 5px;"> Medium
+                        <input type="radio" name="room" value="large" style="margin-top: 5px;"> Large
+                        <!-- <p><input type="submit" value="Submit"></p> -->
+                    </div>
+                </div>
+            </form>
+            <button class="btn solid" onclick="makeGetRequest()">Submit</button>
+            <!-- <h5 style="color:#664229;margin-top: auto;">Already have an account?<a
+                    style="cursor: pointer;color: blue;font-size: medium;" onclick="gotoLogin()">Login</a></h5> -->
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script>
+        function makeGetRequest() {
+            var username = document.getElementById('username').value;
+            var email = document.getElementById('email').value;
+            var phone = document.getElementById('phone').value;
+            var password = document.getElementById('password').value;
+            console.log(username, password)
+            fetch("http://127.0.0.1:5000/register", {
+                method: "POST",
+                body: JSON.stringify({
+                    username: username,
+                    password: password,
+                    phone: phone,
+                    email: email,
+                }), headers: {
+                    "Content-type": "application/json;charset=UTF-8"
+                }
+
+            }).then(response =>
+                response.json()).then(json => {
+                    console.log(json)
+                    if (json.status == true) {
+                        swal({
+                            title: "Good job!",
+                            text: json.message,
+                            icon: "success",
+                            button: "OK",
+                        })
+                    } else {
+                        swal({
+                            title: "NOT GOOD job!",
+                            text: json.message,
+                            icon: "error",
+                            button: "OK",
+                        });
+                    }
+
+                })
+            document.getElementById("formReset").reset();
+        }
+
+        function gotoLogin() {
+            location.href = "login.html"
+        }
+
+        function gotoHome() {
+            location.href = "homepage.html"
+        }
+  
+    </script>
+</body>
+
+</html>
