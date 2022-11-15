@@ -25,14 +25,14 @@
                     <input type="text" placeholder="Room Name" name="name" class="box" id="username" required>
                 </div>
                 <div class="icon">
-                    <textarea type="password" placeholder="Room Description" name="password" id="password" class="box"
+                    <textarea  maxlength="120" type="password" placeholder="Room Description" name="password" id="password" class="box"
                         required></textarea>
                 </div>
                 <div class="icon">
                     <input type="tel" placeholder="Room URL" name="number" id="phone" class="box" required>
                 </div>
                 <div class="icon">
-                    <textarea type="email" placeholder="Inner Description" name="email" class="box" id="email" required></textarea>
+                    <textarea maxlength="120" type="email" placeholder="Inner Description" name="email" class="box" id="email" required></textarea>
                 </div>
                 <div class="icon">
                     <input type="email" placeholder="Room Availability" name="email" class="box" id="email" required>
@@ -44,7 +44,7 @@
                     <div style="display:flex;color:#664229;">
                         <input type="radio" name="room" value="small" style="margin-top: 5px;"> Small
                         <input type="radio" name="room" value="medium" style="margin-top: 5px;"> Medium
-                        <input type="radio" name="room" value="large" style="margin-top: 5px;"> Large
+                        <input type="radio" name="room" value="Large" style="margin-top: 5px;"> Large
                         <!-- <p><input type="submit" value="Submit"></p> -->
                     </div>
                 </div>
@@ -97,9 +97,9 @@
             document.getElementById("formReset").reset();
         }
 
-        function gotoLogin() {
-            location.href = "login.html"
-        }
+        // function gotoLogin() {
+        //     location.href = "login.html"
+        // }
 
         function gotoHome() {
             location.href = "homepage.html"

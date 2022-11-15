@@ -23,7 +23,7 @@ float: left;
   margin: auto;
 }
 .register-page {
-  width: 410px;
+  /* width: 410px; */
   padding: 2% 0 0;
   margin: auto;
 }
@@ -49,7 +49,7 @@ margin-bottom: 26px;
 .form1{
  padding-top: 1px;
  padding-bottom: 15px;
- max-width: 310px;
+ max-width: 350px;
 }
 
 .form input {
